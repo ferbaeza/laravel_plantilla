@@ -1,0 +1,882 @@
+[
+    {
+        "id": "0c485600-9b2d-45e9-8f73-edd340d07631",
+        "name": "ANGELA",
+        "surname": "JIMENEZ",
+        "secondSurname": "ALGOTA",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "623324552",
+                "email": "a_algota@yahoo.es"
+            },
+            {
+                "phoneNumber": ""
+            }
+        ],
+        "addresses": [
+            {
+                "street": "TSIA. JUAN NAVARRO 9  2ºA",
+                "city": "TARAZONA",
+                "province": "ZARAGOZA",
+                "country": "ESP",
+                "postalCode": "50500"
+            }
+        ],
+        "documentNumber": "73082986A           ",
+        "birthDate": "1981-09-08T00:00:00",
+        "primaryClinicId": "70e425d7-f81a-49ba-805e-bb0413ce0961",
+        "gender": "Male",
+        "profession": "REALIZACION AUDIOVISUAL",
+        "guardian": {
+            "name": "ANGELA",
+            "surname": "JIMENEZ",
+            "secondSurname": "ALGOTA",
+            "documentNumber": "73082986A           ",
+            "address": {
+                "street": "TSIA. JUAN NAVARRO 9  2ºA",
+                "city": "TARAZONA",
+                "province": "ZARAGOZA",
+                "country": "ESP",
+                "postalCode": "50500"
+            },
+            "contactInformation": {
+                "phoneNumber": "623324552",
+                "email": "a_algota@yahoo.es"
+            }
+        },
+        "assignedDoctorId": "f9004c49-c4c5-4871-b30e-3c4d32732a76",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:14.8391403Z",
+        "modifiedAt": "2024-02-16T11:14:06.5731979Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "11998a34-8b89-41b0-bf68-ef176a029349",
+        "name": "SAIOA",
+        "surname": "ZAMANILLO",
+        "secondSurname": "LOPEZ",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "",
+                "email": "saioa.zamanillo@gmail.com"
+            },
+            {
+                "phoneNumber": "688601430"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "TSIA CUIDAD JARDIN 5 3 F",
+                "city": "BILBAO",
+                "province": "BIZKAIA",
+                "country": "ESP",
+                "postalCode": "48007"
+            }
+        ],
+        "documentNumber": "78877480S           ",
+        "birthDate": "1988-05-17T00:00:00",
+        "primaryClinicId": "64a7f2e2-5f93-4467-b275-0dd2a32d8df3",
+        "gender": "Male",
+        "profession": "TECNICO DE LABORATORIO",
+        "guardian": {
+            "name": "",
+            "surname": "",
+            "secondSurname": "",
+            "documentNumber": "",
+            "address": {
+                "street": "",
+                "city": "",
+                "province": "",
+                "country": "   ",
+                "postalCode": ""
+            },
+            "contactInformation": {
+                "phoneNumber": "",
+                "fax": ""
+            }
+        },
+        "assignedDoctorId": "d872bd11-aa94-4cae-b5b1-c6e804f2a8cd",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:16.5607075Z",
+        "modifiedAt": "2024-02-22T16:43:39.5683817Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "29c14c9a-b0d6-4a61-8b4f-8b7f59fd251e",
+        "name": "IVONNE",
+        "surname": "HELD",
+        "secondSurname": "",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "01752244009",
+                "email": "ivonne.held@gmx.de"
+            },
+            {
+                "phoneNumber": "06252155648"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "SUDETENSTR.44",
+                "city": "BÜRSTADT",
+                "province": "",
+                "country": "998",
+                "postalCode": "68642"
+            }
+        ],
+        "documentNumber": "                    ",
+        "birthDate": "1978-07-20T00:00:00",
+        "primaryClinicId": "b0037155-34d9-4ab7-847f-11505b3983a5",
+        "gender": "Male",
+        "profession": "VERWALTUNGSLEITUNG",
+        "guardian": {
+            "name": "IVONNE",
+            "surname": "HELD",
+            "secondSurname": "",
+            "documentNumber": "                    ",
+            "address": {
+                "street": "SUDETENSTR.44",
+                "city": "BÜRSTADT",
+                "province": "",
+                "country": "998",
+                "postalCode": "68642"
+            },
+            "contactInformation": {
+                "phoneNumber": "01752244009",
+                "email": "ivonne.held@gmx.de"
+            }
+        },
+        "assignedDoctorId": "6650d5e8-3e0a-4036-a85e-203a8ad4b37a",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:17.5372943Z",
+        "modifiedAt": "2024-02-16T10:28:32.5971257Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "604e6e67-00bf-411d-b998-4f2989c768eb",
+        "name": "YAHIA",
+        "surname": "HILLERMAYER",
+        "secondSurname": "",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "00436605622141",
+                "email": "Hillermayeryahia@gmail.com"
+            },
+            {
+                "phoneNumber": ""
+            }
+        ],
+        "addresses": [
+            {
+                "street": "GUNDERTSHAUSEN 119",
+                "city": "ENGELSBERG",
+                "province": "",
+                "country": "998",
+                "postalCode": "A5142"
+            }
+        ],
+        "documentNumber": "                    ",
+        "birthDate": "1992-04-21T00:00:00",
+        "primaryClinicId": "570e6f8f-e2fd-4d66-9b0a-de393e0f83aa",
+        "gender": "Male",
+        "profession": "STRATEGIEBAUER",
+        "guardian": {
+            "name": "YAHIA",
+            "surname": "HILLERMAYER",
+            "secondSurname": "",
+            "documentNumber": "                    ",
+            "address": {
+                "street": "GUNDERTSHAUSEN 119",
+                "city": "ENGELSBERG",
+                "province": "",
+                "country": "998",
+                "postalCode": "A5142"
+            },
+            "contactInformation": {
+                "phoneNumber": "00436605622141",
+                "email": "Hillermayeryahia@gmail.com"
+            }
+        },
+        "assignedDoctorId": "dc46abc3-1395-4c1e-a34a-d62efc2308af",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:17.560103Z",
+        "modifiedAt": "2024-02-16T10:28:21.719242Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "0a1eb07c-147c-4053-bb44-aed608403569",
+        "name": "MARIA VICTORIA",
+        "surname": "SOTOMAYOR",
+        "secondSurname": "SAEZ",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "918030498",
+                "email": "mvictoria.sotomayor@uam.es"
+            },
+            {
+                "phoneNumber": "615958238"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "C/ FORESTA 3 5ºB",
+                "city": "TRES CANTOS",
+                "province": "MADRID",
+                "country": "ESP",
+                "postalCode": "28760"
+            }
+        ],
+        "documentNumber": "03410821J           ",
+        "birthDate": "1952-08-15T00:00:00",
+        "primaryClinicId": "6c87df25-c4bc-44fe-9571-5d9167fb1edc",
+        "gender": "Male",
+        "profession": "PROFESORA UNIVERSIDAD",
+        "guardian": {
+            "name": "",
+            "surname": "",
+            "secondSurname": "",
+            "documentNumber": "",
+            "address": {
+                "street": "",
+                "city": "",
+                "province": "",
+                "country": "   ",
+                "postalCode": ""
+            },
+            "contactInformation": {
+                "phoneNumber": "",
+                "fax": ""
+            }
+        },
+        "assignedDoctorId": "04ed3a69-3bf0-4e68-8ffe-666e2d0ce9e1",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:20.7085474Z",
+        "modifiedAt": "2024-02-23T08:00:13.3749947Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "d6b90926-6366-48c4-af12-f699f6efddf7",
+        "name": "NATALIJA",
+        "surname": "WEIS",
+        "secondSurname": "",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "015158821535",
+                "email": "weis.baumpflege@t-online.de"
+            },
+            {
+                "phoneNumber": "01714025227"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "AM WIRSTHOF 22",
+                "city": "ESCHWEGE",
+                "province": "",
+                "country": "998",
+                "postalCode": "37269"
+            }
+        ],
+        "documentNumber": "                    ",
+        "birthDate": "1977-08-31T00:00:00",
+        "primaryClinicId": "a17950a6-b165-4b9e-b097-53e6a8a06bda",
+        "gender": "Male",
+        "profession": "FRIESEURIN",
+        "guardian": {
+            "name": "NATALIJA",
+            "surname": "WEIS",
+            "secondSurname": "",
+            "documentNumber": "                    ",
+            "address": {
+                "street": "AM WIRSTHOF 22",
+                "city": "ESCHWEGE",
+                "province": "",
+                "country": "998",
+                "postalCode": "37269"
+            },
+            "contactInformation": {
+                "phoneNumber": "015158821535",
+                "email": "weis.baumpflege@t-online.de"
+            }
+        },
+        "assignedDoctorId": "a425030a-89b6-48e1-aa6d-4468a3974c0d",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:22.5155956Z",
+        "modifiedAt": "2024-02-16T10:28:25.5971062Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "effd201b-689b-428f-97e5-572b850fb198",
+        "name": "TERESA ISABEL",
+        "surname": "AUGUSTO",
+        "secondSurname": "DE JESUS",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "",
+                "email": "taugustodejesus@hotmail.com"
+            },
+            {
+                "phoneNumber": "640797566"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "LAMBERTO ECHEVERRIA 14 ESC 3 BAJO A",
+                "city": "SALAMANCA",
+                "province": "SALAMANCA",
+                "country": "ESP",
+                "postalCode": "37007"
+            }
+        ],
+        "documentNumber": "07996759G           ",
+        "birthDate": "1986-07-26T00:00:00",
+        "primaryClinicId": "ea4d7cec-ebbd-47eb-b68b-4fd5187cead8",
+        "gender": "Male",
+        "profession": "ADMINISTRATIVO",
+        "guardian": {
+            "name": "TERESA ISABEL",
+            "surname": "AUGUSTO",
+            "secondSurname": "DE JESUS",
+            "documentNumber": "07996759G           ",
+            "address": {
+                "street": "LAMBERTO ECHEVERRIA 14 ESC 3 BAJO A",
+                "city": "SALAMANCA",
+                "province": "SALAMANCA",
+                "country": "ESP",
+                "postalCode": "37007"
+            },
+            "contactInformation": {
+                "phoneNumber": "",
+                "email": "taugustodejesus@hotmail.com"
+            }
+        },
+        "assignedDoctorId": "9f35272f-3807-4528-a0e7-0029e11f60b5",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:22.5668329Z",
+        "modifiedAt": "2024-02-16T10:31:51.1344259Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "82b7c908-5b8c-4bd5-aae6-dc38a6992591",
+        "name": "PURIFICACION",
+        "surname": "ECHEVARRIA",
+        "secondSurname": "ARRAUT",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "610418465",
+                "email": "no lo tiene"
+            },
+            {
+                "phoneNumber": "666504161"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "REINA VICTORIA Nº 17 BJ 2",
+                "city": "BARCELONA",
+                "province": "BARCELONA",
+                "country": "ESP",
+                "postalCode": "08021"
+            }
+        ],
+        "documentNumber": "36736151E           ",
+        "birthDate": "1935-02-12T00:00:00",
+        "primaryClinicId": "4bf25725-10be-4869-ab59-63d23964cebd",
+        "gender": "Male",
+        "profession": "AMA DE CASA",
+        "guardian": {
+            "name": "PURIFICACION",
+            "surname": "ECHEVARRIA",
+            "secondSurname": "ARRAUT",
+            "documentNumber": "36736151E           ",
+            "address": {
+                "street": "REINA VICTORIA Nº 17 BJ 2",
+                "city": "BARCELONA",
+                "province": "BARCELONA",
+                "country": "ESP",
+                "postalCode": "08021"
+            },
+            "contactInformation": {
+                "phoneNumber": "610418465",
+                "email": "no lo tiene"
+            }
+        },
+        "assignedDoctorId": "146dcb8e-8f12-4709-8953-41258cdfccc1",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:25.7970333Z",
+        "modifiedAt": "2024-02-16T10:28:25.7970333Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "92b0dac9-0ceb-4ed1-bffb-a1699d4e02cd",
+        "name": "DOLORES",
+        "surname": "PIQUER",
+        "secondSurname": "ARRUE",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "961470385",
+                "email": "no tiene"
+            },
+            {
+                "phoneNumber": "646160755"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "SALVADOR GINER Nº6  BAJO",
+                "city": "PUIG",
+                "province": "VALENCIA",
+                "country": "ESP",
+                "postalCode": "46540"
+            }
+        ],
+        "documentNumber": "22504399A           ",
+        "birthDate": "1947-02-16T00:00:00",
+        "primaryClinicId": "b3c199b9-3acf-4552-8637-93dc425b2498",
+        "gender": "Male",
+        "profession": "PENSIONISTA",
+        "guardian": {
+            "name": "",
+            "surname": "",
+            "secondSurname": "",
+            "documentNumber": "",
+            "address": {
+                "street": "",
+                "city": "",
+                "province": "",
+                "country": "   ",
+                "postalCode": ""
+            },
+            "contactInformation": {
+                "phoneNumber": "",
+                "fax": ""
+            }
+        },
+        "assignedDoctorId": "a24355d2-e0f3-4744-978d-999c7e0b7c51",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:27.7062486Z",
+        "modifiedAt": "2024-02-23T08:48:55.7575132Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "e93d3d76-46c1-43ce-8192-eba01adc6fb1",
+        "name": "NICOLAS",
+        "surname": "ECHEBERRIA",
+        "secondSurname": "ZULAICA",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "943815607",
+                "email": ""
+            },
+            {
+                "phoneNumber": "690394694"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "LA SALVE N 40 2 C",
+                "city": "AZPEITIA",
+                "province": "GIPUZKOA",
+                "country": "ESP",
+                "postalCode": "20730"
+            }
+        ],
+        "documentNumber": "15872591S           ",
+        "birthDate": "1948-04-03T00:00:00",
+        "primaryClinicId": "0be1f90c-6fce-4b5e-8bd1-d93d4a2fea4f",
+        "gender": "Male",
+        "profession": "",
+        "guardian": {
+            "name": "NICOLAS",
+            "surname": "ECHEBERRIA",
+            "secondSurname": "ZULAICA",
+            "documentNumber": "15872591S           ",
+            "address": {
+                "street": "LA SALVE N 40 2 C",
+                "city": "AZPEITIA",
+                "province": "GIPUZKOA",
+                "country": "ESP",
+                "postalCode": "20730"
+            },
+            "contactInformation": {
+                "phoneNumber": "943815607",
+                "email": ""
+            }
+        },
+        "assignedDoctorId": "74b86fe5-7cd7-48f4-ba0d-2e7412c57d4a",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:30.7146099Z",
+        "modifiedAt": "2024-02-16T10:30:30.1839396Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "42df5ee1-d5aa-4a05-aac3-c4ff4a0cead1",
+        "name": "AMPARO",
+        "surname": "TORRENT",
+        "secondSurname": "TOS",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "687076769",
+                "email": "parentero@yahoo.es"
+            },
+            {
+                "phoneNumber": ""
+            }
+        ],
+        "addresses": [
+            {
+                "street": "MAYOR, 101-3",
+                "city": "MANISES",
+                "province": "VALENCIA",
+                "country": "ESP",
+                "postalCode": "46940"
+            }
+        ],
+        "documentNumber": "73652980B           ",
+        "birthDate": "1962-08-24T00:00:00",
+        "primaryClinicId": "b3c199b9-3acf-4552-8637-93dc425b2498",
+        "gender": "Male",
+        "profession": "AMA DE CASA",
+        "guardian": {
+            "name": "AMPARO",
+            "surname": "TORRENT",
+            "secondSurname": "TOS",
+            "documentNumber": "73652980B           ",
+            "address": {
+                "street": "MAYOR, 101-3",
+                "city": "MANISES",
+                "province": "VALENCIA",
+                "country": "ESP",
+                "postalCode": "46940"
+            },
+            "contactInformation": {
+                "phoneNumber": "687076769",
+                "email": "parentero@yahoo.es"
+            }
+        },
+        "assignedDoctorId": "d4c6e33b-9d91-4b0c-8214-fdaef8b6d762",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:32.6459468Z",
+        "modifiedAt": "2024-02-16T10:30:29.9677651Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "6806586c-1043-49f2-b693-6c95f2295d17",
+        "name": "CLAUDIA",
+        "surname": "LECCA",
+        "secondSurname": "",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "3405177537",
+                "email": "claudia.lecca.94@hotmail.it"
+            },
+            {
+                "phoneNumber": ""
+            }
+        ],
+        "addresses": [
+            {
+                "street": "VIA AMERICO VESPUCCI, 14",
+                "city": "FALOPPIO",
+                "province": "CO",
+                "country": "998",
+                "postalCode": "22020"
+            }
+        ],
+        "documentNumber": "LCCCLD94M65C933L    ",
+        "birthDate": "1994-08-25T00:00:00",
+        "primaryClinicId": "18d5f016-a216-49b3-be4f-c59ecc5c78df",
+        "gender": "Male",
+        "profession": "OPERAIA",
+        "guardian": {
+            "name": "CLAUDIA",
+            "surname": "LECCA",
+            "secondSurname": "",
+            "documentNumber": "LCCCLD94M65C933L    ",
+            "address": {
+                "street": "VIA AMERICO VESPUCCI, 14",
+                "city": "FALOPPIO",
+                "province": "CO",
+                "country": "998",
+                "postalCode": "22020"
+            },
+            "contactInformation": {
+                "phoneNumber": "3405177537",
+                "email": "claudia.lecca.94@hotmail.it"
+            }
+        },
+        "assignedDoctorId": "141e0c91-2dd0-4f76-ac5d-6d288612d90c",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:38.4744951Z",
+        "modifiedAt": "2024-02-16T10:33:47.162114Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "d1ecac2a-a7ab-42a5-b737-4197f59a7738",
+        "name": "NATALIJA",
+        "surname": "WEIS",
+        "secondSurname": "",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "015158821535",
+                "email": "weis.baumpflege@t-online.de"
+            },
+            {
+                "phoneNumber": "01714025227"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "AM WIRSTHOF 22",
+                "city": "ESCHWEGE",
+                "province": "",
+                "country": "998",
+                "postalCode": "37269"
+            }
+        ],
+        "documentNumber": "                    ",
+        "birthDate": "1977-08-31T00:00:00",
+        "primaryClinicId": "a17950a6-b165-4b9e-b097-53e6a8a06bda",
+        "gender": "Male",
+        "profession": "FRIESEURIN",
+        "guardian": {
+            "name": "",
+            "surname": "",
+            "secondSurname": "",
+            "documentNumber": "",
+            "address": {
+                "street": "",
+                "city": "",
+                "province": "",
+                "country": "   ",
+                "postalCode": ""
+            },
+            "contactInformation": {
+                "phoneNumber": "",
+                "fax": ""
+            }
+        },
+        "assignedDoctorId": "a425030a-89b6-48e1-aa6d-4468a3974c0d",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:39.2675023Z",
+        "modifiedAt": "2024-02-17T10:55:41.4475356Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "add4cad3-403a-46fa-b9ec-f75920ca080c",
+        "name": "DIEGO",
+        "surname": "GRANADO",
+        "secondSurname": "GARCIA",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "692471566",
+                "email": "dgranado82@gmail.com"
+            },
+            {
+                "phoneNumber": "691327667"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "GREGORIO MARAÑON 18 C 2D",
+                "city": "ARROYO DE LA ENCOMIENDA",
+                "province": "VALLADOLID",
+                "country": "ESP",
+                "postalCode": "47195"
+            }
+        ],
+        "documentNumber": "71147846Z           ",
+        "birthDate": "1982-02-10T00:00:00",
+        "primaryClinicId": "ea4d7cec-ebbd-47eb-b68b-4fd5187cead8",
+        "gender": "Male",
+        "profession": "CELADOR HOSPITAL",
+        "guardian": {
+            "name": "",
+            "surname": "",
+            "secondSurname": "",
+            "documentNumber": "",
+            "address": {
+                "street": "",
+                "city": "",
+                "province": "",
+                "country": "   ",
+                "postalCode": ""
+            },
+            "contactInformation": {
+                "phoneNumber": "",
+                "fax": ""
+            }
+        },
+        "assignedDoctorId": "9f35272f-3807-4528-a0e7-0029e11f60b5",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:39.3169199Z",
+        "modifiedAt": "2024-02-22T16:16:59.5942017Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "9d491bee-2754-4adc-bbb6-8f66a4b47bca",
+        "name": "BELEN",
+        "surname": "DE FUENTES",
+        "secondSurname": "PEREZ",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "979741618",
+                "email": "BELENDEFUENTES@HOTMAIL.COM"
+            },
+            {
+                "phoneNumber": "616259158"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "MODESTO LA FUENTE Nº8 2ºH",
+                "city": "PALENCIA",
+                "province": "PALENCIA",
+                "country": "ESP",
+                "postalCode": "34002"
+            }
+        ],
+        "documentNumber": "12756378A           ",
+        "birthDate": "1973-12-15T00:00:00",
+        "primaryClinicId": "ea8f2f3e-6d85-4b06-a872-ff9d122c46bb",
+        "gender": "Male",
+        "profession": "FARMACEUTICA",
+        "guardian": {
+            "name": "",
+            "surname": "",
+            "secondSurname": "",
+            "documentNumber": "",
+            "address": {
+                "street": "",
+                "city": "",
+                "province": "",
+                "country": "   ",
+                "postalCode": ""
+            },
+            "contactInformation": {
+                "phoneNumber": "",
+                "fax": ""
+            }
+        },
+        "assignedDoctorId": "367d452c-df94-46d8-b8c7-5caff0d1e7f7",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:41.8425843Z",
+        "modifiedAt": "2024-02-19T12:50:46.6647556Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    },
+    {
+        "id": "dd59cb3f-8e7a-4a52-b194-24b1f1453cc0",
+        "name": "PURIFICACION",
+        "surname": "ECHEVARRIA",
+        "secondSurname": "ARRAUT",
+        "enabled": true,
+        "type": "InternalPatient",
+        "contactInformation": [
+            {
+                "phoneNumber": "610418465",
+                "email": "no lo tiene"
+            },
+            {
+                "phoneNumber": "666504161"
+            }
+        ],
+        "addresses": [
+            {
+                "street": "REINA VICTORIA Nº 17 BJ 2",
+                "city": "BARCELONA",
+                "province": "BARCELONA",
+                "country": "ESP",
+                "postalCode": "08021"
+            }
+        ],
+        "documentNumber": "36736151E           ",
+        "birthDate": "1935-02-12T00:00:00",
+        "primaryClinicId": "4bf25725-10be-4869-ab59-63d23964cebd",
+        "gender": "Male",
+        "profession": "AMA DE CASA",
+        "guardian": {
+            "name": "PURIFICACION",
+            "surname": "ECHEVARRIA",
+            "secondSurname": "ARRAUT",
+            "documentNumber": "36736151E           ",
+            "address": {
+                "street": "REINA VICTORIA Nº 17 BJ 2",
+                "city": "BARCELONA",
+                "province": "BARCELONA",
+                "country": "ESP",
+                "postalCode": "08021"
+            },
+            "contactInformation": {
+                "phoneNumber": "610418465",
+                "email": "no lo tiene"
+            }
+        },
+        "assignedDoctorId": "146dcb8e-8f12-4709-8953-41258cdfccc1",
+        "financialAdvisorId": "",
+        "communicationPreferences": "None",
+        "createdAt": "2024-02-16T10:28:41.8943802Z",
+        "modifiedAt": "2024-02-16T11:14:36.3641863Z",
+        "createdBy": "CbPatientsOjoHorusMW",
+        "modifiedBy": "CbPatientsOjoHorusMW"
+    }
+]
