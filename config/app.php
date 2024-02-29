@@ -123,7 +123,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
-
+    'iv' => env('APP_IV'),
     'cipher' => 'AES-256-CBC',
 
     /*
@@ -168,6 +168,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\RegisterBindingsServiceProvider::class,
     ])->toArray(),
 
     /*

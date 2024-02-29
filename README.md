@@ -10,7 +10,7 @@ Una vez clonado o descragado el repositorio - [link de Descarga](https://github.
 
 
 
-## About FrameWork
+## Info about Laravel FrameWork
 
 Toda la Informacion sobre el framework la puedes encontrar en:
 - [Laravel Docs](./docs/Laravel.md)
