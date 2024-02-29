@@ -10,8 +10,9 @@ class CustomRoutes extends CustomBaseRoute
     public static function register(): void
     {
         // Register your custom routes here
-        Route::prefix('api/custom/{name}')->group(function () {
-            Route::get('', [CustomController::class, 'index']);
+        Route::prefix('api/custom/')->group(function () {
+            Route::get('', [CustomController::class, 'view']);
+            Route::get('{name}/', [CustomController::class, 'index']);
         });
     }   
 

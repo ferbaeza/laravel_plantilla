@@ -12,7 +12,11 @@ class CustomController
         protected CustomUseCaseHandler $handler,
     )
     {
-        // Your constructor logic
+    }
+
+    public function view()
+    {
+        return view('custom');
     }
 
     public function index(string $name)
