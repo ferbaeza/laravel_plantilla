@@ -21,7 +21,7 @@ class CustomController
 
     public function index(string $name)
     {
-        $name = 'Fer';
+        // $name = 'Fer';
         $command = new CustomUseCase($name);
         $data = $this->handler->run($command);
         return response()->json(['data' => $data]);

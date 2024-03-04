@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Src\Custom\Infrastructure\Bindings\CustomBindingsProvider;
+use Src\Shared\Providers\Bindings\CustomBindingsProvider;
 
 class RegisterBindingsServiceProvider extends ServiceProvider
 {

@@ -6,9 +6,9 @@ use Src\Shared\Container\BaseRegisterBindings;
 use Src\Custom\Infrastructure\DataSource\CustomRepository;
 use Src\Custom\Domain\Interfaces\CustomInterfaceRepository;
 
-class CustomBindingsProvider extends BaseRegisterBindings
+class CustomBindingsProvider
 {
-    protected function singletons(): array
+    public static function singletons(): array
     {
         return [
             // 'YourSingleton' => YourSingleton::class,

@@ -2,6 +2,9 @@
 
 namespace Src\Custom\Domain\Entity;
 
+use Nette\Utils\Strings;
+use Src\Shared\Utils\Strings\StringUtil;
+
 class CustomEntity implements \JsonSerializable
 {
     public function __construct(
@@ -13,7 +16,7 @@ class CustomEntity implements \JsonSerializable
 
     public static function fromCommand(string $name)
     {
-        return new self($name, 40);
+        return new self(StringUtil::capitalize($name), 40);
     }
 
     public function jsonSerialize()
