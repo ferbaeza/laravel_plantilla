@@ -4,6 +4,31 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Super Admin Password
+    |--------------------------------------------------------------------------
+    |
+    | Habrá que establecerlo como variable de entorno en producción. Para desarrollo,
+    | si no se establece, por defecto es 'password'. Se usa en el DeploySeeder y en el
+    | UsersTableSeeder.
+    |
+    */
+
+    'super_admin_password' => env('SUPER_ADMIN_PASSWORD', 'password'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Entornos de Pruebas
+    |--------------------------------------------------------------------------
+    |
+    | Hay ciertos elementos que solo se deben ejecutar o cargar en un entorno local o
+    | de pruebas. Por ejemplo los seeders de desarrollo, el CustomFakerProvider, etc.
+    | Esta variable define todos esos entornos que no son produccion donde se pueden
+    | ejecutar/cargar estos elementos.
+    |
+    */
+    'stage_environments' => ['local', 'test', 'tests', 'testing', 'pruebas', 'desarrollo', 'alpha', 'beta'],
 
     /*
     |--------------------------------------------------------------------------

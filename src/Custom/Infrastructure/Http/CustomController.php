@@ -3,28 +3,37 @@
 namespace Src\Custom\Infrastructure\Http;
 
 
-use Src\Custom\Application\CustomUseCase;
-use Src\Custom\Application\CustomUseCaseHandler;
+use Src\Shared\Utils\Http\ApiResponse;
+use Src\Custom\Application\CustomUseCaseCommand;
+use Src\Custom\Application\CustomUseCaseCommandHandler;
 
 class CustomController
 {
     public function __construct(
-        protected CustomUseCaseHandler $handler,
+        protected CustomUseCaseCommandHandler $handler,
     )
     {
     }
 
-    public function view()
+    public function index()
     {
         return view('custom');
     }
 
-    public function index(string $name)
+    public function hello(string $name)
     {
-        // $name = 'Fer';
-        $command = new CustomUseCase($name);
+        $command = new CustomUseCaseCommand($name, null);
         $data = $this->handler->run($command);
-        return response()->json(['data' => $data]);
+        return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
+    }
+
+    public function body(CustomRequest $request)
+    {
+        $name = $request['nombre'];
+        $edad = $request['edad'];
+        $command = new CustomUseCaseCommand($name, $edad);
+        $data = $this->handler->run($command);
+        return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
 
 }

@@ -14,16 +14,38 @@ class CustomApiTest extends TestCase
     /** @test */
     public function hello()
     {
-        $response = $this->get('/api/custom/{name}');
+        $name = 'Fer';
+        $response = $this->get("/api/custom/hello/". $name);
         $response->assertStatus(200);
-        $response->assertJson([
-            'data' =>[
-                "entity" =>[
-                    "name" => "Fer",
-                    "age" =>40
+        $response->assertJsonStructure([
+            'data' => [
+                "entity" => [
+                    "nombre" ,
+                    "edad" 
                 ],
-                "message" => "Data saved"
-            ]
+                "message" ,
+            ],
+            "success" ,
+            "status"
+        ]);
+    }
+
+    /** @test */
+    public function body()
+    {
+        $nombre = 'Fernando Baeza Hurtado';
+        $response = $this->post('/api/custom/body', ['nombre' => $nombre, 'edad' => 40]);
+        $response->assertStatus(200);
+        $response->assertJsonStructure([
+            'data' => [
+                "entity" => [
+                    "nombre",
+                    "edad"
+                ],
+                "message",
+            ],
+            "success",
+            "status"
         ]);
     }
 }

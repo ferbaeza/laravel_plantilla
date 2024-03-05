@@ -29,31 +29,6 @@ class HashTest extends TestCase
     public function it_should_return_hashed_password_using_Hash()
     {
         $password = 'password';
-        $key = random_bytes(SODIUM_CRYPTO_SECRETBOX_KEYBYTES);
-        $nonce = random_bytes(SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
-        $ciphertext = sodium_crypto_secretbox($password, $nonce, $key);
-
-        $expected = sodium_crypto_secretbox_open($ciphertext, $nonce, $key);
-
-
-        $value = \openssl_encrypt(
-            true ? serialize($password) : $password,
-            strtolower('aes-128-cbc'),
-            config('app.key'),
-            0,
-            config('app.iv'),
-            $tag
-        );
-        dd($value, openssl_decrypt(
-            $value,
-            strtolower('aes-128-cbc'),
-            config('app.key'),
-            0,
-            config('app.iv'),
-            $tag
-        ), $ciphertext, $expected);
-
-
         $hashedPassword = Hash::make($password);
         $this->assertTrue(Hash::check($password, $hashedPassword));
     }

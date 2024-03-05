@@ -37,7 +37,7 @@ class ApiResponse
 
         $response = [
             'data' => $content,
-            'errors' => $errors,
+            'success' => true,
             'status' => $status
         ];
 

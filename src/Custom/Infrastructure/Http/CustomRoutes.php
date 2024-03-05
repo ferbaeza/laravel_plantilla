@@ -13,8 +13,9 @@ class CustomRoutes extends CustomRoutesProvider
     {
         // Register your custom routes here
         Route::prefix(self::$prefix)->group(function () {
-            Route::get('', [CustomController::class, 'view'])->name('custom.view');
-            Route::get('{name}/', [CustomController::class, 'index'])->name('custom.index');
+            Route::get('', [CustomController::class, 'index'])->name('custom.view');
+            Route::post('/body', [CustomController::class, 'body'])->name('custom.body');
+            Route::get('/hello/{name}', [CustomController::class, 'hello'])->name('custom.hello');
         });
     }   
 

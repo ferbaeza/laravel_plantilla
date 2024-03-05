@@ -7,23 +7,30 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Database\Seeders\TruncateAllTablesSeeder;
 
-class DatabaseSeeder extends Seeder
+/**
+ * Propósito: pruebas automáticas.
+ * Datos: los mínimos imprescindibles (datos de configuración)
+ */
+class TestingSeeder extends Seeder
 {
     /**
      * Seed the application's database.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
-        if (!$this->shouldSeedsBeRun()) {
+        if (! $this->shouldSeedsBeRun()) {
             return;
         }
 
         $this->command->info('Comienza a ejecutarse el TestingSeeder:');
         DB::beginTransaction();
+
         Schema::disableForeignKeyConstraints();
 
         $this->call([
-            // CustomSeeder::class,
+            TruncateAllTablesSeeder::class,
         ]);
 
         Schema::enableForeignKeyConstraints();
@@ -40,7 +47,6 @@ class DatabaseSeeder extends Seeder
         if (in_array(app()->environment(), config('app.stage_environments'))) {
             return true;
         }
-
         $this->command->error('El seeder no se puede lanzar en este entorno: ' . app()->environment());
         return false;
     }
