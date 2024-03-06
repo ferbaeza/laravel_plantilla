@@ -5,8 +5,9 @@ namespace Src\Custom\Infrastructure\Http;
 use Src\Shared\Utils\Http\ApiResponse;
 use Src\Custom\Application\CustomUseCaseCommand;
 use Src\Custom\Application\CustomUseCaseCommandHandler;
+use Src\Shared\Controller\BaseController;
 
-class CustomController
+class CustomController extends BaseController
 {
     public function __construct(
         protected CustomUseCaseCommandHandler $handler,

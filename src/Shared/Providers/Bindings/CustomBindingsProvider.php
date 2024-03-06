@@ -2,16 +2,16 @@
 
 namespace Src\Shared\Providers\Bindings;
 
-use Src\Home\Infrastructure\Bindings\HomeBindings;
-use Src\Custom\Infrastructure\Bindings\CustomBindingsProvider as CustomBindings;
+use Src\Auth\Infrastructure\Bindings\AuthBindings;
 use Src\Shared\Providers\Bindings\Domain\BaseRegisterBindings;
+use Src\Custom\Infrastructure\Bindings\CustomBindingsProvider as CustomBindings;
 
 class CustomBindingsProvider extends BaseRegisterBindings
 {
     protected function singletons(): array
     {
         return array_merge(
-            HomeBindings::singletons(),
+            AuthBindings::singletons(),
             CustomBindings::singletons(),
         );
     }

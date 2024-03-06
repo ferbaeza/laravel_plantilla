@@ -2,8 +2,7 @@
 
 namespace Src\Custom\Infrastructure\Bindings;
 
-use Src\Shared\Container\BaseRegisterBindings;
-use Src\Custom\Infrastructure\DataSource\CustomRepository;
+use Src\Custom\Infrastructure\Datasource\CustomRepository;
 use Src\Custom\Domain\Interfaces\CustomInterfaceRepository;
 
 class CustomBindingsProvider
