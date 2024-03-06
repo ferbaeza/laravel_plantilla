@@ -1,7 +1,7 @@
 # Configuración general de la herramienta
 Options:
   # execution: full #full (default), fast
-  execution: fast
+  execution: fast  #Para tener en desarrollo una respuesta rápida para equipos pequenyos
   processes: 2
 
 # Herramientas que se van a ejecutar
