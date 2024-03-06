@@ -11,8 +11,7 @@ class CustomEntity implements \JsonSerializable
     public function __construct(
         public readonly string $nombre,
         public readonly ?int $edad,
-    )
-        {
+    ) {
     }
 
     public static function fromCommand(CustomUseCaseCommand $command)
@@ -20,10 +19,8 @@ class CustomEntity implements \JsonSerializable
         return new self(StringUtil::capitalize($command->nombre), $command->edad);
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }
-
-
 }

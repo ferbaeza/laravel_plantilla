@@ -22,5 +22,4 @@ class RegisterBindingsServiceProvider extends ServiceProvider
             $register->register();
         }
     }
-
 }

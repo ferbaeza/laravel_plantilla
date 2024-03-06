@@ -13,5 +13,4 @@ class HomeBindings
             HomeInterfaceRepository::class => HomeRepository::class,
         ];
     }
-
 }

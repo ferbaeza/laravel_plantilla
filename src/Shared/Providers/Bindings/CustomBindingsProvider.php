@@ -15,5 +15,4 @@ class CustomBindingsProvider extends BaseRegisterBindings
             CustomBindings::singletons(),
         );
     }
-
 }

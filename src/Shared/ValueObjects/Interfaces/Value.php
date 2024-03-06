@@ -4,5 +4,5 @@ namespace Src\Shared\ValueObjects\Interfaces;
 
 interface Value
 {
-    public function value();
+    public function value(): mixed;
 }

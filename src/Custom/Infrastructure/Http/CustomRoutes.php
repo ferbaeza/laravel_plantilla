@@ -17,6 +17,5 @@ class CustomRoutes extends CustomRoutesProvider
             Route::post('/body', [CustomController::class, 'body'])->name('custom.body');
             Route::get('/hello/{name}', [CustomController::class, 'hello'])->name('custom.hello');
         });
-    }   
-
+    }
 }

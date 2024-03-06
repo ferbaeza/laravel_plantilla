@@ -5,7 +5,6 @@ namespace Src\Home\Infrastructure\Web;
 use Illuminate\Support\Facades\Route;
 use Src\Shared\Providers\Routes\CustomRoutesProvider;
 
-
 class HomeRoutes extends CustomRoutesProvider
 {
     protected static string $prefix = 'home';

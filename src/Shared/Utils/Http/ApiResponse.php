@@ -11,7 +11,7 @@ class ApiResponse
     protected const ERROR_CODIGO_ESTADO_200 = 'Error en la respuesta API, el código de estado no puede ser 200 y tener errores. Quizás deberías usar el campo data para enviar esta información o modificar el estado para indicar su error';
     protected const ERROR_CODIGO_ESTADO = 'Error en la respuesta API, el código de estado debe ser 200, 400, 401, 404, 405 o 500';
     protected const ERROR_MALFORMED_RESPONSE = 'Respuesta API mal formada';
-    protected const STATUS_CODE = [200, 400, 401, 403, 404, 405, 422, 500]; 
+    protected const STATUS_CODE = [200, 400, 401, 403, 404, 405, 422, 500];
 
     public const ESTADO_200_OK = 200;
     public const ESTADO_400_ERROR = 400;
@@ -32,8 +32,8 @@ class ApiResponse
     {
         static::comprobarError($errors);
         static::comprobarStatus($errors, $status);
-        
-        $errors =['count' => count($errors), 'errors' => []];
+
+        $errors = ['count' => count($errors), 'errors' => []];
 
         $response = [
             'data' => $content,
@@ -83,5 +83,4 @@ class ApiResponse
             }
         }
     }
-
 }

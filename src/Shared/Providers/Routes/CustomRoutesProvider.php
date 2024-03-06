@@ -7,7 +7,6 @@ use Src\Home\Infrastructure\Web\HomeRoutes;
 use Src\Custom\Infrastructure\Http\CustomRoutes;
 use Src\Shared\Providers\Routes\Domain\RoutesBaseRegister;
 
-
 class CustomRoutesProvider extends RoutesBaseRegister
 {
     protected static string $prefix = 'api';

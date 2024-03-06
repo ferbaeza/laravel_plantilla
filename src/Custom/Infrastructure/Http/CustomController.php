@@ -2,7 +2,6 @@
 
 namespace Src\Custom\Infrastructure\Http;
 
-
 use Src\Shared\Utils\Http\ApiResponse;
 use Src\Custom\Application\CustomUseCaseCommand;
 use Src\Custom\Application\CustomUseCaseCommandHandler;
@@ -11,8 +10,7 @@ class CustomController
 {
     public function __construct(
         protected CustomUseCaseCommandHandler $handler,
-    )
-    {
+    ) {
     }
 
     public function index()
@@ -35,5 +33,4 @@ class CustomController
         $data = $this->handler->run($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
-
 }

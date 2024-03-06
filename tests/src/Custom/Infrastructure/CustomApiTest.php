@@ -15,13 +15,13 @@ class CustomApiTest extends TestCase
     public function hello()
     {
         $name = 'Fer';
-        $response = $this->get("/api/custom/hello/". $name);
+        $response = $this->get("/api/custom/hello/" . $name);
         $response->assertStatus(200);
         $response->assertJsonStructure([
             'data' => [
                 "entity" => [
                     "nombre" ,
-                    "edad" 
+                    "edad"
                 ],
                 "message" ,
             ],

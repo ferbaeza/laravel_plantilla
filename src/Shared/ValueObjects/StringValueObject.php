@@ -8,8 +8,7 @@ class StringValueObject extends CustomBaseValueObject
 {
     public function __construct(
         protected readonly string $value
-    )
-        {
+    ) {
     }
 
     public function value(): string

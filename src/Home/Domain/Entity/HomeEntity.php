@@ -11,11 +11,10 @@ class HomeEntity
     public function __construct(
         public readonly string $id,
         public readonly StringValueObject $nombre
-    )
-        {
+    ) {
     }
 
-    public static function fromCommand(HomeCommand $command , string $string): self
+    public static function fromCommand(HomeCommand $command, string $string): self
     {
         $texto = sprintf($string, $command->nombre);
         return new self(Str::uuid(), new StringValueObject($texto));

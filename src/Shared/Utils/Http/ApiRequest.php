@@ -12,5 +12,4 @@ abstract class ApiRequest extends FormRequest
     }
 
     abstract public function rules();
-
 }

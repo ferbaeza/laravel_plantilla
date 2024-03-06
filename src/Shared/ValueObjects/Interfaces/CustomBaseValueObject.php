@@ -6,5 +6,5 @@ use JsonSerializable;
 
 abstract class CustomBaseValueObject implements JsonSerializable
 {
-    abstract public function value();
+    abstract public function value(): mixed;
 }

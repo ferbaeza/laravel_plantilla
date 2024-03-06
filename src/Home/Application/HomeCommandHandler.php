@@ -9,8 +9,7 @@ class HomeCommandHandler
 {
     public function __construct(
         protected readonly HomeInterfaceRepository $homeInterfaceRepository
-    )
-        {
+    ) {
     }
     public function run(HomeCommand $command)
     {
@@ -18,5 +17,4 @@ class HomeCommandHandler
         // dd($saludo);
         return HomeEntity::fromCommand($command, $saludo);
     }
-
 }

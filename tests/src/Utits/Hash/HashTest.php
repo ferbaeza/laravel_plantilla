@@ -32,5 +32,4 @@ class HashTest extends TestCase
         $hashedPassword = Hash::make($password);
         $this->assertTrue(Hash::check($password, $hashedPassword));
     }
-
 }

@@ -15,5 +15,4 @@ class CustomBindingsProvider
             CustomInterfaceRepository::class => CustomRepository::class,
         ];
     }
-
 }
