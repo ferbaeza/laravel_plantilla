@@ -3,6 +3,8 @@
 namespace Src\Auth\Infrastructure\Http;
 
 use App\Models\User;
+use Faker\Core\Uuid;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Src\Auth\Application\AuthCommand;
 use Src\Shared\Utils\Http\ApiResponse;
@@ -22,21 +24,22 @@ class AuthController extends BaseController
 
     public function crearUsuario(CrearUsuarioRequest $request)
     {
-        // dd(UuidValue::create()->value());
-        $user = UserModel::create([
-            'id' => UuidValue::create()->value(),
-            'nombre' => $request['nombre'],
-            'email' => $request['email'],
-            'password' => $request['password'],
+        $userModel = new UserModel();
+        $userModel->id = UuidValue::id();
+        $userModel->nombre = $request['nombre'];
+        $userModel->email = $request['email'];
+        $userModel->password = Hash::make($request['password']);
+        $userModel->save();
 
-        ]);
+        dd($userModel->id, UuidValue::id());
+
         $data =
             [
                 'message' => 'Usuario creado con exito',
                 'status' => '200',
-                'data' => $user,
-                'uuid' => $user->id,
-                'token' => $user->createToken('api_token')->plainTextToken
+                'data' => $userModel,
+                'uuid' => $userModel->id,
+                'token' => $userModel->createToken('api_token')->plainTextToken
             ];
 
         // $command = new AuthCommand($request);
@@ -46,6 +49,7 @@ class AuthController extends BaseController
 
     public function registrarUsuario(RegistrarUsuarioRequest $request)
     {
+        $request->validated();
         $data = ['message' => 'Bye Bye World!'];
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }

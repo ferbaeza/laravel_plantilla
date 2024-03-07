@@ -10,6 +10,6 @@ class CustomRepository implements CustomInterfaceRepository
     public function save(CustomEntity $entidad): string
     {
         /**Repository to save a get Data */
-        return "Data saved: " . $entidad->jsonSerialize();
+        return "Data saved: " . $entidad->nombre;
     }
 }

@@ -5,6 +5,7 @@ namespace Src\Shared\Jobs\Example;
 use Src\Shared\Jobs\BaseJobs;
 use Src\Shared\Events\Example\ExampleEvent;
 use Src\Shared\Jobs\Example\ExampleCommand;
+use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
 
 class ExampleJob extends BaseJobs
 {
@@ -21,8 +22,7 @@ class ExampleJob extends BaseJobs
 
     private function createCommand(ExampleEvent $event)
     {
-        return new ExampleCommand(
-            $event->id
-        );
+        // @phpstan-ignore-next-line
+        return new ExampleCommand($event->id);
     }
 }

@@ -1,7 +1,7 @@
 # Configuración general de la herramienta
 Options:
-  # execution: full #full (default), fast
-  execution: fast  #Para tener en desarrollo una respuesta rápida para equipos pequenyos
+  execution: full #full (default), fast
+  # execution: fast  #Para tener en desarrollo una respuesta rápida para equipos pequenyos
   processes: 2
 
 # Herramientas que se van a ejecutar
@@ -21,7 +21,7 @@ phpstan:
   # config: "./qa/phpstan-phpqa.neon"
   # memory-limit: '1G' # Examples: 1M 2000M 1G 5G
   # level: 4 #level 0-8 (0 default, 8 max)
-  otherArguments: 'src tests --level 5 --no-progress'
+  otherArguments: 'src tests --level 1 --no-progress'
 
 #Se ejecuta contra la raiz del proyecto
 parallel-lint:

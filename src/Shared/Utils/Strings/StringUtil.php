@@ -39,7 +39,6 @@ class StringUtil
 
         try {
             json_decode($value, true, 512, JSON_THROW_ON_ERROR);
-            // @phpstan-ignore-next-line
         } catch (JsonException) {
             return false;
         }

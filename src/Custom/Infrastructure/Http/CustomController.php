@@ -2,17 +2,19 @@
 
 namespace Src\Custom\Infrastructure\Http;
 
+use Illuminate\Console\Command;
 use Src\Shared\Utils\Http\ApiResponse;
+use Src\Shared\Controller\BaseController;
 use Src\Custom\Application\CustomUseCaseCommand;
 use Src\Custom\Application\CustomUseCaseCommandHandler;
-use Src\Shared\Controller\BaseController;
+use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
 
 class CustomController extends BaseController
 {
-    public function __construct(
-        protected CustomUseCaseCommandHandler $handler,
-    ) {
-    }
+    // public function __construct(
+    //     protected CustomUseCaseCommandHandler $handler,
+    // ) {
+    // }
 
     public function index()
     {
@@ -22,7 +24,7 @@ class CustomController extends BaseController
     public function hello(string $name)
     {
         $command = new CustomUseCaseCommand($name, null);
-        $data = $this->handler->run($command);
+        $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
 
@@ -31,7 +33,7 @@ class CustomController extends BaseController
         $name = $request['nombre'];
         $edad = $request['edad'];
         $command = new CustomUseCaseCommand($name, $edad);
-        $data = $this->handler->run($command);
+        $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
 }

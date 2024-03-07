@@ -22,6 +22,12 @@ class UuidValue extends CustomBaseValueObject
     {
         return new self(Str::uuid());
     }
+
+    public static function id(): string
+    {
+        return self::create()->value();
+    }
+
     public function __toString()
     {
         return $this->id;

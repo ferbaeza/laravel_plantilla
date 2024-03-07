@@ -3,10 +3,11 @@
 namespace Src\Shared\Jobs;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
 
 class BaseJobs implements ShouldQueue
 {
@@ -15,7 +16,9 @@ class BaseJobs implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    public function handle(): void
+    public function run($event, $command)
     {
+        $event = $event;
+        return CommandBusFacade::process($command);
     }
 }

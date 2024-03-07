@@ -4,7 +4,7 @@ namespace Src\Auth\Domain\Entity;
 
 use Illuminate\Support\Str;
 use Src\Auth\Application\AuthCommand;
-use Src\Shared\ValueObjects\StringValueObject;
+use Src\Shared\ValueObjects\Primitivos\Strings\StringValueObject;
 
 class AuthEntity
 {
