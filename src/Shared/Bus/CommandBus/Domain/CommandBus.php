@@ -16,7 +16,6 @@ class CommandBus implements BusInterface
     public function handle($command)
     {
         $middleware = current($this->middlewares);
-        dump($middleware);
         next($this->middlewares);
         $result = $this->execute($command, $middleware);
         return $result;

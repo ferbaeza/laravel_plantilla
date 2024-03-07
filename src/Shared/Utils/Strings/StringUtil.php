@@ -21,6 +21,11 @@ class StringUtil
         return ucwords($value);
     }
 
+    public static function token(int $length = 24): string
+    {
+        return bin2hex(random_bytes($length));
+    }
+
     /**
      * Determina si es un json if a given value is valid JSON.
      *

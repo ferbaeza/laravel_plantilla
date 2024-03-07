@@ -81,6 +81,12 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'auth' => [
+        'registro' => env('APP_URL', 'http://localhost') . '/api/auth/registrarUsuario',
+        'invitacion' => env('APP_URL', 'http://localhost') . '/api/auth/invitacion',
+        'alta' => env('APP_URL', 'http://localhost') . '/api/auth/crearUsuario',
+        'login' => env('APP_URL', 'http://localhost') . '/api/auth/login',
+    ],
 
     'asset_url' => env('ASSET_URL'),
 

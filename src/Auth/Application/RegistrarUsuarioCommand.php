@@ -2,10 +2,10 @@
 
 namespace Src\Auth\Application;
 
-class AuthCommand
+class RegistrarUsuarioCommand
 {
     public function __construct(
-        public readonly string $nombre
+        public readonly string $email
     ) {
     }
 }

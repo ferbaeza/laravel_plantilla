@@ -2,9 +2,10 @@
 
 namespace Src\Shared\ValueObjects\Primitivos\Strings;
 
+use JsonSerializable;
 use Src\Shared\ValueObjects\Base\Contracts\CustomBaseValueObject;
 
-class StringValueObject extends CustomBaseValueObject
+class StringValueObject extends CustomBaseValueObject implements JsonSerializable
 {
     public function __construct(
         protected readonly string $value

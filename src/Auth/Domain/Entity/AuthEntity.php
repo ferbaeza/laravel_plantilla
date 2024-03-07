@@ -3,7 +3,7 @@
 namespace Src\Auth\Domain\Entity;
 
 use Illuminate\Support\Str;
-use Src\Auth\Application\AuthCommand;
+use Src\Auth\Application\CrearUsuarioCommand;
 use Src\Shared\ValueObjects\Primitivos\Strings\StringValueObject;
 
 class AuthEntity
@@ -14,7 +14,7 @@ class AuthEntity
     ) {
     }
 
-    public static function fromCommand(AuthCommand $command, string $string): self
+    public static function fromCommand(CrearUsuarioCommand $command, string $string): self
     {
         $texto = sprintf($string, $command->nombre);
         return new self(Str::uuid(), new StringValueObject($texto));

@@ -20,4 +20,9 @@ class RegistrarUsuarioRequest extends ApiRequest
             'email.string' => 'Email must be a string',
         ];
     }
+
+    public function email()
+    {
+        return $this['email'];
+    }
 }
