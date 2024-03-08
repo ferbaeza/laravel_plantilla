@@ -17,6 +17,11 @@ class UserModel extends Authenticatable
 
     protected $table = 'usuarios';
 
+    protected static function newFactory()
+    {
+        return UserFactory::new();
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

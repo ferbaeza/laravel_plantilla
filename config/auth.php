@@ -62,7 +62,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel::class,
         ],
 
         // 'users' => [

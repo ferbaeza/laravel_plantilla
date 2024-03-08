@@ -41,11 +41,11 @@ phpcs:
 phpcbf:
     usePhpcsConfiguration: true
     # executablePath: tools/php71/phpcbf
-    # paths: ['./']
-    # standard: './qa/psr12-ruleset.xml' #or predefined rules: Squiz, PSR12, Generic, PEAR
-    # ignore: [vendor] # Se podría configurar en el standard directamente
-    # error-severity: 1
-    # warning-severity: 6
+    paths: ['./']
+    standard: './qa/psr12-ruleset.xml' #or predefined rules: Squiz, PSR12, Generic, PEAR
+    ignore: [vendor] # Se podría configurar en el standard directamente
+    error-severity: 5
+    warning-severity: 6
 
 phpmd:
   executablePath: tools/phpmd

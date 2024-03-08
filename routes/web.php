@@ -18,17 +18,17 @@ use Src\Shared\Laravel\Mailer\Domain\Auth\RegistroUsuarioEmail;
 */
 
 Route::get('/', function () {
-    $mailer =  RegistroUsuarioEmail::create(
-        email: 'email-pendiente-de-confirmacion@servicio.com',
-        url: 'http://desarrollo2.zataca.com/api/'
-    );
+    // $mailer =  RegistroUsuarioEmail::create(
+    //     email: 'email-pendiente-de-confirmacion@servicio.com',
+    //     url: 'http://desarrollo2.zataca.com/api/'
+    // );
 
-    $mailerAsync =  RegistroUsuarioEmail::create(
-        email: 'email--dos@servicio.com',
-        url: 'http://desarrollo2.zataca.com/api/'
-    );
-    CustomMailer::create($mailer);
-    CustomMailer::async($mailerAsync);
+    // $mailerAsync =  RegistroUsuarioEmail::create(
+    //     email: 'email--dos@servicio.com',
+    //     url: 'http://desarrollo2.zataca.com/api/'
+    // );
+    // CustomMailer::create($mailer);
+    // CustomMailer::async($mailerAsync);
     $message = 'Email enviado';
     return ApiResponse::json(content: [$message], status: ApiResponse::ESTADO_200_OK);
 });

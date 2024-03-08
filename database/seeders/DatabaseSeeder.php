@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Src\Shared\Laravel\Seeders\UserSeeder;
 use Database\Seeders\TruncateAllTablesSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
 
         $this->call([
-            // CustomSeeder::class,
+            UserSeeder::class,
         ]);
 
         Schema::enableForeignKeyConstraints();

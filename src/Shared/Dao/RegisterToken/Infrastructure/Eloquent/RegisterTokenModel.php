@@ -14,4 +14,9 @@ class RegisterTokenModel extends Model
     use HasFactory;
 
     protected $table = 'password_register_token';
+
+    protected static function newFactory()
+    {
+        return RegisterTokenFactory::new();
+    }
 }
