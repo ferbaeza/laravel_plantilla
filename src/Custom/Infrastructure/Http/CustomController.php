@@ -2,11 +2,9 @@
 
 namespace Src\Custom\Infrastructure\Http;
 
-use Illuminate\Console\Command;
 use Src\Shared\Utils\Http\ApiResponse;
-use Src\Shared\Controller\BaseController;
 use Src\Custom\Application\CustomUseCaseCommand;
-use Src\Custom\Application\CustomUseCaseCommandHandler;
+use Src\Shared\Laravel\Controller\BaseController;
 use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
 
 class CustomController extends BaseController

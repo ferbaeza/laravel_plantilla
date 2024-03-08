@@ -3,8 +3,8 @@
 namespace Src\Auth\Infrastructure\Datasource;
 
 use Illuminate\Support\Facades\Hash;
-use Src\Shared\Repository\BaseRepository;
 use Src\Auth\Application\CrearUsuarioCommand;
+use Src\Shared\Laravel\Repository\BaseRepository;
 use Src\Shared\Dao\User\Domain\Entity\UsuarioRegistrado;
 use Src\Auth\Domain\Interfaces\UsuarioInterfaceRepository;
 use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;

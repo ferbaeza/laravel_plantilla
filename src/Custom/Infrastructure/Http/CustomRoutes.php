@@ -3,7 +3,7 @@
 namespace Src\Custom\Infrastructure\Http;
 
 use Illuminate\Support\Facades\Route;
-use Src\Shared\Providers\Routes\CustomRoutesProvider;
+use Src\Shared\Laravel\Providers\Routes\CustomRoutesProvider;
 
 class CustomRoutes extends CustomRoutesProvider
 {

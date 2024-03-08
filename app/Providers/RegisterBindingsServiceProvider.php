@@ -3,12 +3,12 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Src\Shared\Providers\Bindings\CustomBindingsProvider;
+use Src\Shared\Laravel\Providers\Bindings\CustomBaseBindingsProvider;
 
 class RegisterBindingsServiceProvider extends ServiceProvider
 {
     protected $packagesBindingsRegister = [
-        CustomBindingsProvider::class,
+        CustomBaseBindingsProvider::class,
     ];
     /**
      * Register services.

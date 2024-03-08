@@ -4,7 +4,7 @@ namespace Src\Auth\Infrastructure\Http;
 
 use Illuminate\Support\Facades\Route;
 use Src\Auth\Infrastructure\Http\AuthController;
-use Src\Shared\Providers\Routes\CustomRoutesProvider;
+use Src\Shared\Laravel\Providers\Routes\CustomRoutesProvider;
 
 class AuthRoutes extends CustomRoutesProvider
 {

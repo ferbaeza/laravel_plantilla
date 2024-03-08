@@ -2,21 +2,15 @@
 
 namespace Src\Auth\Infrastructure\Http;
 
-use App\Models\User;
-use Faker\Core\Uuid;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
-use Src\Auth\Application\CrearUsuarioCommand;
 use Src\Shared\Utils\Http\ApiResponse;
-use Src\Shared\Controller\BaseController;
-use Src\Auth\Application\CrearUsuarioCommandHandler;
+use Src\Auth\Application\CrearUsuarioCommand;
 use Src\Auth\Application\InvitacionValidadaQuery;
 use Src\Auth\Application\RegistrarUsuarioCommand;
+use Src\Shared\Laravel\Controller\BaseController;
+use Src\Auth\Application\CrearUsuarioCommandHandler;
 use Src\Shared\Bus\QueryBus\Infrastructure\QueryBusFacade;
-use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
 use Src\Auth\Infrastructure\Http\Requests\CrearUsuarioRequest;
 use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
-use Src\Shared\ValueObjects\Shared\UuidValue\Entity\UuidValue;
 use Src\Auth\Infrastructure\Http\Requests\RegistrarUsuarioRequest;
 
 class AuthController extends BaseController
