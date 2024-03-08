@@ -18,7 +18,7 @@ class RegistroUsuarioEmail extends CustomBaseEmail
         $this->destinatario = $email;
     }
 
-    static function create(string $email, string $url): self
+    public static function create(string $email, string $url): self
     {
         return new self($email, $url);
     }
