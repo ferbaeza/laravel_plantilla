@@ -43,4 +43,10 @@ class AuthController extends BaseController
         $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
+    
+    public function test()
+    {
+        $data = ['message' => 'welcome'];
+        return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
+    }
 }

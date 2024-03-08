@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Src\Custom\Infrastructure\Http\CustomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/', function () {
-    return response()->json(['message' => 'welcome'], 200);
-});
+Route::get('/', [CustomController::class, 'welcome'])->name('home');
+// Route::get('/', function () {
+//     return response()->json(['message' => 'welcome'], 200);
+// })->name('home');
