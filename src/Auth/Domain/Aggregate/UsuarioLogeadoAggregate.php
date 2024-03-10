@@ -2,11 +2,7 @@
 
 namespace Src\Auth\Domain\Aggregate;
 
-use Illuminate\Support\Str;
-use Src\Auth\Application\CrearUsuarioCommand;
 use Illuminate\Contracts\Auth\Authenticatable;
-use Src\Shared\Dao\User\Domain\Entity\UsuarioRegistrado;
-use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
 use Src\Shared\ValueObjects\Primitivos\Strings\StringValueObject;
 
 class UsuarioLogeadoAggregate

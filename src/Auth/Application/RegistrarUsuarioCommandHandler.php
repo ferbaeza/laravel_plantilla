@@ -14,6 +14,9 @@ class RegistrarUsuarioCommandHandler
 
     public function run(RegistrarUsuarioCommand $command)
     {
-        return $this->registerRepository->registrarUsuario($command);
+        $emailYaVerificado = $this->registerRepository->count($command);
+        if (!$emailYaVerificado) {
+            return $this->registerRepository->registrarUsuario($command);
+        }
     }
 }

@@ -17,12 +17,17 @@ class CustomController extends BaseController
 
     public function index()
     {
+        return view('custom');
+    }
+
+    public function error_401()
+    {
         return view('errors.401');
     }
 
     public function error()
     {
-        return $this->index();
+        return $this->error_401();
     }
 
     public function hello(string $name)

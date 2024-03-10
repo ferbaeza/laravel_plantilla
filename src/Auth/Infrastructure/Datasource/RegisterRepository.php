@@ -12,10 +12,21 @@ use Src\Auth\Domain\Interfaces\RegisterInterfaceRepository;
 use Src\Shared\ValueObjects\Shared\UuidValue\Entity\UuidValue;
 use Src\Shared\Laravel\Exceptions\Auth\AuthTokenNoExisteException;
 use Src\Shared\Dao\RegisterToken\Infrastructure\Eloquent\RegisterTokenModel;
+use Src\Shared\Laravel\Exceptions\Usuario\EmailUsuarioYaVerificadoException;
 
 class RegisterRepository extends BaseRepository implements RegisterInterfaceRepository
 {
     protected string $modelClass = RegisterTokenModel::class;
+
+
+    public function count(RegistrarUsuarioCommand $command): bool
+    {
+        $model = $this->modelClass::where('email', $command->email)->first();
+        if ($model) {
+            throw EmailUsuarioYaVerificadoException::create();
+        }
+        return false;
+    }
 
     public function registrarUsuario(RegistrarUsuarioCommand $command): UrlRegistroDto
     {
