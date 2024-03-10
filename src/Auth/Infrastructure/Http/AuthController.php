@@ -25,7 +25,7 @@ class AuthController extends BaseController
 
     public function crearUsuario(CrearUsuarioRequest $request)
     {
-        $command = new CrearUsuarioCommand(nombre: $request['nombre'], email: $request['email'], password: $request['password']);
+        $command = new CrearUsuarioCommand(nombre: $request['nombre'], primerApellido:$request['primerApellido'], segundoApellido:$request['segundoApellido'], email: $request['email'], password: $request['password']);
         $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }

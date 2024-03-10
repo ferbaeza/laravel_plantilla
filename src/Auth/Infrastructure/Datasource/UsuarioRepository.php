@@ -24,6 +24,8 @@ class UsuarioRepository extends BaseRepository implements UsuarioInterfaceReposi
         $model->id = UuidValue::id();
         $model->email = $command->email;
         $model->nombre = $command->nombre;
+        $model->primer_apellido = $command->primerApellido;
+        $model->segundo_apellido = $command->segundoApellido;
         $model->password = Hash::make($command->password);
         $model->save();
         return UsuarioRegistrado::create($model->id, $model->nombre, $model->email);

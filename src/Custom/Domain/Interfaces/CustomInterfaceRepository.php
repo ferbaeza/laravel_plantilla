@@ -2,9 +2,9 @@
 
 namespace Src\Custom\Domain\Interfaces;
 
-use Src\Custom\Domain\Entity\CustomEntity;
+use Src\Custom\Domain\Entity\CustomUsuarioEntity;
 
 interface CustomInterfaceRepository
 {
-    public function save(CustomEntity $entidad): string;
+    public function save(CustomUsuarioEntity $entidad);
 }

@@ -2,14 +2,17 @@
 
 namespace Src\Custom\Infrastructure\Datasource;
 
-use Src\Custom\Domain\Entity\CustomEntity;
+use Src\Custom\Domain\Entity\CustomUsuarioEntity;
+use Src\Shared\Laravel\Repository\BaseRepository;
+use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
 use Src\Custom\Domain\Interfaces\CustomInterfaceRepository;
 
-class CustomRepository implements CustomInterfaceRepository
+class CustomRepository extends BaseRepository implements CustomInterfaceRepository
 {
-    public function save(CustomEntity $entidad): string
+    protected string $modelClass = UserModel::class;
+
+    public function save(CustomUsuarioEntity $entidad)
     {
-        /**Repository to save a get Data */
-        return "Data saved: " . $entidad->nombre;
+        return UserModel::all()->toArray();
     }
 }
