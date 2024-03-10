@@ -17,10 +17,10 @@ class CriteriaBuilder
         $result = $this->model->with($criteria->getRelations());
 
         foreach ($criteria->getOptions() as $options) {
-            $metodo = $options['method'];
-            $params = $options['params'];
+            // $metodo = $options['method'];
+            // $params = $options['params'];
         }
-        $response = call_user_func_array([$result, $metodo], $params);
+        $response = call_user_func_array([$result, $options['method']], $options['params']);
         // dd($response);
         return $response;
     }
