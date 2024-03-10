@@ -6,13 +6,13 @@ use Src\Custom\Domain\Entity\RouteEntity;
 use Src\Custom\Application\WelcomeCommand;
 use Src\Custom\Domain\Collection\RouteCollection;
 
+/**
+ * @SuppressWarnings(PHPMD)
+ */
 class WelcomeCommandHandler
 {
-
     public function run(WelcomeCommand $command)
     {
-        $routes = app()->router;
-        $routes = [];
         $routeCollection = new RouteCollection();
         foreach (app()->router->getRoutes() as $route) {
             $uri = explode('/', $route->uri);
@@ -20,9 +20,7 @@ class WelcomeCommandHandler
                 continue;
             }
             $routeCollection->add(new RouteEntity($route->uri));
-            $routes[] = new RouteEntity($route->uri);
         }
-        dd($routeCollection);
         return $routeCollection->getItems();
     }
 }

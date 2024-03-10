@@ -10,24 +10,19 @@ use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
 
 class CustomController extends BaseController
 {
-    // public function __construct(
-    //     protected CustomUseCaseCommandHandler $handler,
-    // ) {
-    // }
-
     public function index()
     {
         return view('custom');
     }
 
-    public function error_401()
+    public function error401()
     {
         return view('errors.401');
     }
 
     public function error()
     {
-        return $this->error_401();
+        return $this->error401();
     }
 
     public function hello(string $name)

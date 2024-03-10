@@ -3,6 +3,7 @@
 namespace Src\Shared\Laravel\Collection;
 
 use Illuminate\Support\Collection;
+use Src\Shared\Laravel\Exceptions\CustomExceptions\CustomCollectionExceptions;
 
 abstract class CustomBaseCollection
 {
@@ -26,7 +27,7 @@ abstract class CustomBaseCollection
     public function add($entity)
     {
         if (!is_a($entity, $this->type)) {
-            throw new \Exception("You can only add items of type {$this->type}");
+            throw CustomCollectionExceptions::drop("{$this->type}");
         }
         $hash = spl_object_hash($entity);
         $hashId = spl_object_id($entity);
