@@ -35,11 +35,10 @@ class CustomController extends BaseController
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
 
-    public function body(CustomRequest $request)
+    public function body(UsuarioEmailRequest $request)
     {
-        $name = $request['nombre'];
-        $edad = $request['edad'];
-        $command = new CustomUseCaseCommand($name, $edad);
+        $email = $request['email'];
+        $command = new CustomUseCaseCommand($email);
         $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }

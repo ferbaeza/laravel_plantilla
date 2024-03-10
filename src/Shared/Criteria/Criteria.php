@@ -4,12 +4,12 @@ namespace Src\Shared\Criteria;
 
 class Criteria
 {
-    private $select = null;
-    private $where = [];
-    private $orderBy = [];
-    private $limit = null;
-    private $offset = null;
-    private $groipBy = null;
+    // private $select = null;
+    // private $where = [];
+    // private $orderBy = [];
+    // private $limit = null;
+    // private $offset = null;
+    // private $groipBy = null;
     private $options = [];
     private $with = [];
 
