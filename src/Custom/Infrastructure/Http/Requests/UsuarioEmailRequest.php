@@ -4,8 +4,7 @@ namespace Src\Custom\Infrastructure\Http\Requests;
 
 use Src\Shared\Utils\Http\ApiRequest;
 
-class 
- extends ApiRequest
+class UsuarioEmailRequest extends ApiRequest
 {
     public function rules()
     {

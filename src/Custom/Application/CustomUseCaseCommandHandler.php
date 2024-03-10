@@ -25,8 +25,8 @@ class CustomUseCaseCommandHandler
         $repo = $this->repository->save($usuario);
         return
             [
-            'Usuario buscado segun Criteria' => $usuario->jsonSerialize(),
-            'Resultado de todos los Usuarios' => $repo
+                'Usuario buscado segun Criteria' => $usuario->jsonSerialize(),
+                'Resultado de todos los Usuarios' => $repo
             ];
     }
 }

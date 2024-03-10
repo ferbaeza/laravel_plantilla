@@ -4,7 +4,6 @@ namespace Src\Shared\Criteria;
 
 class Criteria
 {
-
     private $select = null;
     private $where = [];
     private $orderBy = [];
