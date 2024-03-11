@@ -6,7 +6,7 @@ use Src\Shared\Criteria\Criteria;
 use Src\Custom\Domain\Interfaces\CustomInterfaceRepository;
 use Src\Custom\Domain\Interfaces\CustomUsuarioInterfaceRepository;
 
-class CustomUseCaseCommandHandler
+class UsusarioByEmailCommandHandler
 {
     public function __construct(
         protected CustomInterfaceRepository $repository,
@@ -15,12 +15,13 @@ class CustomUseCaseCommandHandler
     }
 
 
-    public function run(CustomUseCaseCommand $command)
+    public function run(UsusarioByEmailCommand $command)
     {
         $criteria = new Criteria();
-        $criteria->where('email', $command->email);
-        $criteria->where('segundo_apellido', 'Test');
+        $criteria->get();
         $usuario = $this->usuarioRepository->getEntity($criteria);
+
+        dd($usuario);
 
         $repo = $this->repository->save($usuario);
         return

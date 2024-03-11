@@ -19,8 +19,8 @@ class WelcomeCommandHandler
             if ($uri[0] == ('_ignition') || $uri[0] == 'sanctum') {
                 continue;
             }
-            $routeCollection->add(new RouteEntity($route->uri));
+            $routeCollection->add(new RouteEntity($route->uri, $route->methods[0]));
         }
-        return $routeCollection->getItems();
+        return $routeCollection->getByMethod();
     }
 }

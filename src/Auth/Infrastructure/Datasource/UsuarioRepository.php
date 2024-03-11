@@ -11,8 +11,8 @@ use Src\Auth\Domain\Aggregate\UsuarioLogeadoAggregate;
 use Src\Shared\Dao\User\Domain\Entity\UsuarioRegistrado;
 use Src\Auth\Domain\Interfaces\UsuarioInterfaceRepository;
 use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
-use Src\Shared\Laravel\Exceptions\Auth\UserNoExisteException;
 use Src\Shared\ValueObjects\Shared\UuidValue\Entity\UuidValue;
+use Src\Shared\Laravel\Exceptions\Usuario\UserNoExisteException;
 
 class UsuarioRepository extends BaseRepository implements UsuarioInterfaceRepository
 {

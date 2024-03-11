@@ -4,7 +4,7 @@ namespace Src\Custom\Infrastructure\Http;
 
 use Src\Shared\Utils\Http\ApiResponse;
 use Src\Custom\Application\WelcomeCommand;
-use Src\Custom\Application\CustomUseCaseCommand;
+use Src\Custom\Application\UsusarioByEmailCommand;
 use Src\Shared\Laravel\Controller\BaseController;
 use Src\Custom\Infrastructure\Http\Requests\CustomRequest;
 use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
@@ -27,10 +27,9 @@ class CustomController extends BaseController
         return $this->error401();
     }
 
-    public function getUsusarioByEmail(UsuarioEmailRequest $request)
+    public function getUsusarioByEmail(string $email)
     {
-        $email = $request->email();
-        $command = new CustomUseCaseCommand($email);
+        $command = new UsusarioByEmailCommand($email);
         $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
@@ -38,7 +37,7 @@ class CustomController extends BaseController
     public function body(UsuarioEmailRequest $request)
     {
         $email = $request['email'];
-        $command = new CustomUseCaseCommand($email);
+        $command = new UsusarioByEmailCommand($email);
         $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }

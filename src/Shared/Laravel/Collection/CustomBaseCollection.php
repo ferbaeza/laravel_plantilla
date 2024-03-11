@@ -24,6 +24,11 @@ abstract class CustomBaseCollection
         return $this->itemsById;
     }
 
+    public function getAddedItems()
+    {
+        return $this->addedItems;
+    }
+
     public function add($entity)
     {
         if (!is_a($entity, $this->type)) {
