@@ -5,7 +5,6 @@ namespace Src\Shared\Criteria;
 class Criteria
 {
     // private $select = null;
-    // private $where = [];
     // private $orderBy = [];
     // private $limit = null;
     // private $offset = null;
@@ -112,6 +111,16 @@ class Criteria
     {
         $this->options[] = [
             'method' => 'get',
+            'params' => $params
+        ];
+        return $this;
+    }
+
+    public function with(...$params)
+    {
+        $this->with = $params;
+        $this->options[] = [
+            'method' => 'with',
             'params' => $params
         ];
         return $this;

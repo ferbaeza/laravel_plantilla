@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Shared\Laravel\Seeders;
+namespace Src\Shared\Laravel\Seeders\Development;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -18,6 +18,6 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ];
-        UserModel::factory($data)->create();
+        $user = UserModel::factory($data)->create();
     }
 }

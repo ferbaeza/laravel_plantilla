@@ -6,11 +6,9 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Database\Seeders\TruncateAllTablesSeeder;
-use Src\Shared\Laravel\Seeders\Development\RoleSeeder;
-use Src\Shared\Laravel\Seeders\Development\UserSeeder;
-use Src\Shared\Laravel\Seeders\Development\UsuarioHasRoleSeeder;
+use Src\Shared\Laravel\Seeders\Deploy\UserSeeder;
 
-class DatabaseSeeder extends Seeder
+class DeploySeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -26,10 +24,7 @@ class DatabaseSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
 
         $this->call([
-            RoleSeeder::class,
             UserSeeder::class,
-            UsuarioHasRoleSeeder::class
-
         ]);
 
         Schema::enableForeignKeyConstraints();

@@ -18,7 +18,7 @@ class UsusarioByEmailCommandHandler
     public function run(UsusarioByEmailCommand $command)
     {
         $criteria = new Criteria();
-        $criteria->get();
+        $criteria->with('roles');
         $usuario = $this->usuarioRepository->getEntity($criteria);
 
         dd($usuario);

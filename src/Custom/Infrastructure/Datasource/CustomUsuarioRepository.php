@@ -12,6 +12,7 @@ use Src\Custom\Domain\Interfaces\CustomUsuarioInterfaceRepository;
 
 class CustomUsuarioRepository extends BaseRepository implements CustomUsuarioInterfaceRepository
 {
+    protected $with = ['roles'];
     protected string $modelClass = UserModel::class;
 
     public function getEntity(Criteria $criteria): CustomUsuarioEntity

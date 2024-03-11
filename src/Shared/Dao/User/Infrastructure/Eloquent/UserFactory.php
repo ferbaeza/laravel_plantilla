@@ -5,6 +5,8 @@ namespace Src\Shared\Dao\User\Infrastructure\Eloquent;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Src\Shared\Dao\Role\Infrastructure\Eloquent\RoleModel;
+use Src\Shared\Dao\UsuarioHasRole\Infrastructure\Eloquent\UsuarioHasRoleModel;
 
 class UserFactory extends Factory
 {
@@ -23,14 +25,4 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
-
-    // /**
-    //  * Indicate that the model's email address should be unverified.
-    //  */
-    // public function unverified(): static
-    // {
-    //     return $this->state(fn (array $attributes) => [
-    //         'email_verified_at' => null,
-    //     ]);
-    // }
 }
