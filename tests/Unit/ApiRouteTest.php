@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Src\Custom\Application\WelcomeCommand;
 use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
+use Src\Shared\ValueObjects\Shared\UuidValue\Entity\UuidValue;
 
 class ApiRouteTest extends TestCase
 {
@@ -26,10 +27,12 @@ class ApiRouteTest extends TestCase
      */
     public function test_the_application_returns_a_successful_event(): void
     {
-        $command = new WelcomeCommand('4822');
+        $eventId = UuidValue::id();
+        $command = new WelcomeCommand($eventId);
         $response = CommandBusFacade::process($command);
 
-        dd($response);
         $this->assertIsArray($response);
+        $this->assertArrayHasKey('EventId', $response);
+        $this->assertEquals($eventId, $response['EventId'][0]);
     }
 }
