@@ -4,7 +4,7 @@ namespace Src\Custom\Application;
 
 use Src\Shared\Laravel\Command\BaseCommand;
 
-class WelcomeCommand extends BaseCommand
+class JobCommand extends BaseCommand
 {
     public function __construct(
         public ?string $id

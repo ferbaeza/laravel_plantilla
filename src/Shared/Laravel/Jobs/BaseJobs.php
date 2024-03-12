@@ -18,6 +18,7 @@ class BaseJobs implements ShouldQueue
 
     public function run($event, $command)
     {
+        // dd($event, $command);
         $event = $event;
         return CommandBusFacade::process($command);
     }
