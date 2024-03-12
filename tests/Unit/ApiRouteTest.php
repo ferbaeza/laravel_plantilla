@@ -6,7 +6,6 @@ use Tests\TestCase;
 use Src\Custom\Application\WelcomeCommand;
 use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
 
-
 class ApiRouteTest extends TestCase
 {
     protected function setUp(): void
@@ -33,6 +32,4 @@ class ApiRouteTest extends TestCase
         dd($response);
         $this->assertIsArray($response);
     }
-
-
 }

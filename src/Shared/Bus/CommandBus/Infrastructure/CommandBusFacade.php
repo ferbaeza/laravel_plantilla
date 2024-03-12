@@ -14,7 +14,6 @@ class CommandBusFacade
         return (new CommandBus(
             TransactionMiddleware::class,
             EventsMiddleware::class,
-
             /** este debe ser el ultimo middleware que invoca al caso de uso */
             CommandQueryHandler::class
         ));

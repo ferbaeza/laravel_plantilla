@@ -17,12 +17,12 @@ class WelcomeCommandHandler
     public function run(WelcomeCommand $command)
     {
         $routeCollection = new RouteCollection();
-        
-        if($command->id) {
+
+        if ($command->id) {
             $routeCollection->add(new RouteEntity($command->id, 'EventId'));
             EventDispatcher::publish(new CustomExampleEvent($command->id));
         }
-        
+
         foreach (app()->router->getRoutes() as $route) {
             $uri = explode('/', $route->uri);
             if ($uri[0] == ('_ignition') || $uri[0] == 'sanctum') {

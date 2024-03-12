@@ -2,7 +2,6 @@
 
 namespace Src\Custom\Infrastructure\Jobs;
 
-
 use Src\Shared\Laravel\Jobs\BaseJobs;
 use Src\Custom\Application\JobCommand;
 use Src\Shared\Eventos\Custom\CustomExampleEvent;

@@ -7,7 +7,7 @@ use Src\Shared\Laravel\Command\BaseCommand;
 class BaseEvent
 {
     private BaseCommand $command;
-    public function __construct() 
+    public function __construct()
     {
     }
 
