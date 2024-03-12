@@ -7,9 +7,6 @@ use Src\Shared\Dao\Role\Infrastructure\Eloquent\RoleModel;
 use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
 use Src\Shared\Dao\UsuarioHasRole\Infrastructure\Eloquent\UsuarioHasRoleModel;
 
-/**
- * @SuppressWarnings(PHPMD.TooManyPublicMethods)
- */
 class UsuarioHasRoleSeeder extends Seeder
 {
     public function run(): void
