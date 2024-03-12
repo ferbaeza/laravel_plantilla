@@ -12,6 +12,4 @@ class RoleModel extends CustomModel
     {
         return RoleFactory::new();
     }
-
-
 }

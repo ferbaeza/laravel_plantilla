@@ -2,7 +2,6 @@
 
 namespace Src\Shared\Laravel\Seeders\Deploy;
 
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;

@@ -8,4 +8,9 @@ class UsusarioByEmailCommand
         public readonly string $email,
     ) {
     }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
 }

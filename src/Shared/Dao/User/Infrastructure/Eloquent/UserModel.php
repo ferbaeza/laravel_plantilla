@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Src\Shared\Dao\Role\Infrastructure\Eloquent\RoleModel;
 use Src\Shared\Dao\UsuarioHasRole\Infrastructure\Eloquent\UsuarioHasRoleModel;
 
 class UserModel extends Authenticatable
@@ -30,6 +31,6 @@ class UserModel extends Authenticatable
 
     public function roles()
     {
-        return $this->hasMany(UsuarioHasRoleModel::class, 'fk_usuario_id', 'id');
+        return $this->belongsToMany(RoleModel::class, 'usuario_has_roles', 'fk_usuario_id', 'fk_role_id');
     }
 }

@@ -15,18 +15,16 @@ class UsusarioByEmailCommandHandlerApiTest extends TestCase
     }
 
     /** @test */
-    public function getUsusarioByEmail()
+    public function getUsusarioByEmailApiTest()
     {
-        // $id = UuidValue::create();
-        $id = 'c0aafd7f-45ba-4140-99c3-d095ff3bceb0';
-        // dd($id);
         $usuario = UserModel::factory([
-            'id' => $id,
+            'id' => UuidValue::create(),
             'email' => 'baezacode@gmail.com'
         ])->create();
+
         UserModel::factory()->count(10)->create();
 
-        $response = $this->get("/api/custom/getUsusarioByEmail/$id");
+        $response = $this->get("/api/custom/getUsusarioByEmail/$usuario->email");
         $response->assertStatus(200);
         $response->assertJsonStructure([
             'data' => [

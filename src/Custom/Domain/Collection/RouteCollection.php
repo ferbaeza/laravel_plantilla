@@ -13,7 +13,7 @@ class RouteCollection extends BaseCollection
     public function getByMethod()
     {
         $data = [];
-        foreach ($this->getItems() as $value) {
+        foreach ($this->getAddedItems() as $value) {
             if (!isset($data[$value->metodo])) {
                 $data[$value->metodo] = [$value->nombre];
                 continue;

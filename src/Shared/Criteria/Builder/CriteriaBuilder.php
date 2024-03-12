@@ -14,14 +14,26 @@ class CriteriaBuilder
 
     public function apply(Criteria $criteria)
     {
-        $result = $this->model->with($criteria->getRelations());
-
-        foreach ($criteria->getOptions() as $options) {
-            $metodo = $options['method'];
-            $params = $options['params'];
+        if ($this->model->with) {
+            $criteria->with($this->model->with);
         }
-        /** @phpstan-ignore-next-line */
-        $response = call_user_func_array([$result, $metodo], $params);
-        return $response;
+        $result = $this->model->with($criteria->with);
+
+        if (count($criteria->getOptions())) {
+            foreach ($criteria->getOptions() as $options) {
+                $metodo = $options['method'];
+                $params = $options['params'];
+            }
+            /** @phpstan-ignore-next-line */
+            $result = call_user_func_array([$result, $metodo], $params);
+        }
+
+        if (count($criteria->orderBy)) {
+            foreach ($criteria->orderBy as $orderBy) {
+                $result = call_user_func_array([$result, 'orderBy'], $orderBy);
+            }
+        }
+
+        return $result;
     }
 }

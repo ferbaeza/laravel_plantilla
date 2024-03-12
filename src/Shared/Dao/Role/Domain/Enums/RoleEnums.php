@@ -7,5 +7,4 @@ enum RoleEnums: string
     case ADMIN = 'admin';
     case USER = 'user';
     case GUEST = 'guest';
-    
 }

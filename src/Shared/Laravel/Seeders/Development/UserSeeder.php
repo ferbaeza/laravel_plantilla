@@ -18,6 +18,6 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ];
-        $user = UserModel::factory($data)->create();
+        UserModel::factory($data)->create();
     }
 }

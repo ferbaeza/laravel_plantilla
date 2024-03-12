@@ -5,6 +5,9 @@ namespace Src\Custom\Application;
 use Src\Shared\Criteria\Criteria;
 use Src\Custom\Domain\Interfaces\CustomInterfaceRepository;
 use Src\Custom\Domain\Interfaces\CustomUsuarioInterfaceRepository;
+use Src\Shared\Dao\Role\Infrastructure\Eloquent\RoleModel;
+use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
+use Src\Shared\Dao\UsuarioHasRole\Infrastructure\Eloquent\UsuarioHasRoleModel;
 
 class UsusarioByEmailCommandHandler
 {
@@ -18,11 +21,12 @@ class UsusarioByEmailCommandHandler
     public function run(UsusarioByEmailCommand $command)
     {
         $criteria = new Criteria();
+
+        $criteria->where('nombre', 'fer');
+        $criteria->where('email', $command->getEmail());
         $criteria->with('roles');
         $usuario = $this->usuarioRepository->getEntity($criteria);
-
-        dd($usuario);
-
+        // $usuario = $this->usuarioRepository->getCollection($criteria);
         $repo = $this->repository->save($usuario);
         return
             [

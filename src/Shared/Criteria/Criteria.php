@@ -2,20 +2,23 @@
 
 namespace Src\Shared\Criteria;
 
+/**
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
 class Criteria
 {
     // private $select = null;
-    // private $orderBy = [];
     // private $limit = null;
     // private $offset = null;
     // private $groupBy = null;
     private $options = [];
-    private $with = [];
+    public array $with = [];
+    private $orderBy = [];
 
-    // public function __get($name)
-    // {
-    //     return $this->$name;
-    // }
+    public function __get($name)
+    {
+        return $this->$name;
+    }
 
     public function getOptions()
     {
@@ -116,13 +119,21 @@ class Criteria
         return $this;
     }
 
+    public function orderBy($column, $direction = 'asc')
+    {
+        $this->orderBy[] = [$column, $direction];
+        return $this;
+    }
+
     public function with(...$params)
     {
-        $this->with = $params;
-        $this->options[] = [
-            'method' => 'with',
-            'params' => $params
-        ];
+        if (is_array($params[0])) {
+            // dump('es array');
+            $this->with = array_merge($this->with, $params[0]);
+        } else {
+            // dump('no es array');
+            $this->with = array_merge($this->with, $params);
+        }
         return $this;
     }
 }

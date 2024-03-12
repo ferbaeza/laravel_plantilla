@@ -11,6 +11,7 @@ class CustomUsuarioEntity extends CustomBaseEntity
     public function __construct(
         public readonly string $nombre,
         public readonly string $email,
+        public readonly array $roles,
     ) {
     }
 }

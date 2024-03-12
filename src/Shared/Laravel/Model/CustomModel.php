@@ -9,10 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class CustomModel extends Model
 {
-    protected $table;
-
     use HasUuids;
     use HasApiTokens;
     use HasFactory;
 
+    protected $table;
 }

@@ -22,15 +22,24 @@ class UsusarioByEmailCommandHandlerTest extends TestCase
     /** @test */
     public function deberia_devolver_los_datos_de_un_usuario_usando_Criteria()
     {
-        $usuario = UserModel::factory()->create();
+        $usuario = UserModel::factory([
+            'nombre' => 'fer',
+            'email' => 'baezacode@gmail.com'
+        ])->create();
+
         $role = RoleModel::factory()->create();
+        UserModel::factory()->count(5)->create();
+
         UsuarioHasRoleModel::factory([
             'fk_usuario_id' => $usuario->id,
             'fk_role_id' => $role->id,
-            ])->create();
-            
+        ])->create();
+
         $command = new UsusarioByEmailCommand($usuario->email);
-        CommandBusFacade::process($command);
+        $response = CommandBusFacade::process($command);
+        $this->assertIsArray($response);
+        $this->assertEquals($response['Usuario buscado segun Criteria']['nombre'], $usuario->nombre);
+        $this->assertEquals($response['Usuario buscado segun Criteria']['email'], $usuario->email);
     }
 
     /** @test */
@@ -42,4 +51,30 @@ class UsusarioByEmailCommandHandlerTest extends TestCase
         $command = new UsusarioByEmailCommand($email);
         CommandBusFacade::process($command);
     }
+
+
+    /** @test */
+    // public function deberia_devolver_los_datos_de_un_usuario_usando_Criteria()
+    // {
+    //     $usuario = UserModel::factory([
+    //         'nombre' => 'fer',
+    //         'email' => 'baezacode@gmail.com'
+    //     ])->create();
+
+    //     $userDos = UserModel::factory()->create();
+    //     $role = RoleModel::factory()->create();
+    //     UserModel::factory()->count(5)->create();
+
+    //     UsuarioHasRoleModel::factory([
+    //         'fk_usuario_id' => $usuario->id,
+    //         'fk_role_id' => $role->id,
+    //     ])->create();
+
+    //     UsuarioHasRoleModel::factory([
+    //         'fk_usuario_id' => $userDos->id,
+    //         'fk_role_id' => $role->id,
+    //     ])->create();
+    //     $command = new UsusarioByEmailCommand($usuario->email);
+    //     CommandBusFacade::process($command);
+    // }
 }
