@@ -44,7 +44,7 @@ class CustomController extends BaseController
 
     public function welcome()
     {
-        $command = new WelcomeCommand();
+        $command = new WelcomeCommand(null);
         $data = CommandBusFacade::process($command);
         return ApiResponse::json(content: $data, status: ApiResponse::ESTADO_200_OK);
     }
