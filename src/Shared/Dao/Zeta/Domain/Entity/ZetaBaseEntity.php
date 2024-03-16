@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Console\Commands\Shared\DataBase\templates;
+namespace Src\Shared\Dao\Zeta\Domain\Entity;
 
 use JsonSerializable;
 
-class ContextBaseEntity implements JsonSerializable
+class ZetaBaseEntity implements JsonSerializable
 {
     public function __construct(
         public readonly string $id,

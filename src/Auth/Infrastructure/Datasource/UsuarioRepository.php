@@ -8,7 +8,7 @@ use Src\Auth\Application\CrearUsuarioCommand;
 use Src\Auth\Application\LoginUsuarioCommand;
 use Src\Shared\Laravel\Repository\BaseRepository;
 use Src\Auth\Domain\Aggregate\UsuarioLogeadoAggregate;
-use Src\Shared\Dao\User\Domain\Entity\UsuarioRegistrado;
+use Src\Shared\Dao\User\Domain\Entity\UserDaoEntity;
 use Src\Auth\Domain\Interfaces\UsuarioInterfaceRepository;
 use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
 use Src\Shared\ValueObjects\Shared\UuidValue\Entity\UuidValue;
@@ -18,7 +18,7 @@ class UsuarioRepository extends BaseRepository implements UsuarioInterfaceReposi
 {
     protected string $modelClass = UserModel::class;
 
-    public function crearUsuario(CrearUsuarioCommand $command): UsuarioRegistrado
+    public function crearUsuario(CrearUsuarioCommand $command): UserDaoEntity
     {
         $model = new UserModel();
         $model->id = UuidValue::id();
@@ -28,7 +28,7 @@ class UsuarioRepository extends BaseRepository implements UsuarioInterfaceReposi
         $model->segundo_apellido = $command->segundoApellido;
         $model->password = Hash::make($command->password);
         $model->save();
-        return UsuarioRegistrado::create($model->id, $model->nombre, $model->email);
+        return UserDaoEntity::create($model->id, $model->nombre, $model->email);
     }
 
     public function loginUsuario(LoginUsuarioCommand $command): UsuarioLogeadoAggregate

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\Shared\Almacenamiento;
+namespace App\Console\Commands\Almacenamiento;
 
 use Illuminate\Console\Command;
 use Src\Shared\Bus\CommandBus\Infrastructure\CommandBusFacade;
@@ -29,6 +29,6 @@ class EliminarImagenesAlmacenamientoPublico extends Command
      */
     public function handle()
     {
-        CommandBusFacade::process(new BorrarImagenesCommand());
+        // CommandBusFacade::process(new BorrarImagenesCommand());
     }
 }

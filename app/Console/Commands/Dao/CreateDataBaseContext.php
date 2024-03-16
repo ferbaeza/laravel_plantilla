@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\Shared\DataBase;
+namespace App\Console\Commands\Dao;
 
 use Illuminate\Support\Str;
 use App\Console\Commands\CreateContext;
@@ -8,18 +8,18 @@ use Src\Shared\Utils\Foundation\StringUtils;
 
 class CreateDataBaseContext extends CreateContext
 {
-    protected $signature = 'create:database {context}';
-    protected $description = 'Comando para crear la estructura de carpetas y sus clases contexto del Shared/DataBase';
-    protected static $template = '/app/Console/Commands/Shared/DataBase/templates';
+    protected $signature = 'zeta:database {context}';
+    protected $description = 'Comando para crear la estructura de carpetas y sus clases contexto del Shared/Dao';
 
+    protected static $template = '/app/Console/Commands/Dao/templates';
     protected array $directories = [
         'Domain',
         'Domain/Entity',
         'Domain/Interfaces',
         'Domain/Collection',
         'Infrastructure',
-        'Infrastructure/Laravel',
-        'Infrastructure/Persistence'
+        'Infrastructure/Bindings',
+        'Infrastructure/Datasource'
     ];
 
     protected array $domain = [
@@ -29,18 +29,19 @@ class CreateDataBaseContext extends CreateContext
     ];
 
     protected array $infrastructure = [
-        'Infrastructure/Laravel',
-        'Infrastructure/Persistence'
+        'Infrastructure/Bindings',
+        'Infrastructure/Datasource',
+        'Infrastructure/Eloquent',
     ];
 
-    public static string $binding = "Laravel";
-    public static string $persistence = "Persistence";
+    public static string $binding = "Bindings";
+    public static string $persistence = "Datasource";
     public static string $interface = "Interfaces";
 
 
-    private static string $rootPath = "/Shared/Database";
-    protected string $namespaceTemplate = "App\Console\Commands\Shared\DataBase\\templates";
-    protected string $namespaceDataBase = "Src\Shared\Database";
+    private static string $rootPath = "/Shared/Dao";
+    protected string $namespaceTemplate = "App\Console\Commands\Dao\\templates";
+    protected string $namespaceDataBase = "Src\Shared\Dao";
 
     public function handle($path = null)
     {
@@ -85,7 +86,7 @@ class CreateDataBaseContext extends CreateContext
         $finalTemplate = Str::of($tempTemplate)->replace('Context', $context);
 
         if ($tipo === self::$persistence) {
-            $finalTemplate = Str::of($finalTemplate)->replace("$this->namespaceDataBase\\$context\Infrastructure\Persistence\\$context" . "BaseRepositoryInterface", "$this->namespaceDataBase\\$context\Domain\Interfaces\\$context" . "BaseRepositoryInterface");
+            $finalTemplate = Str::of($finalTemplate)->replace("$this->namespaceDataBase\\$context\Infrastructure\Datasource\\$context" . "BaseRepositoryInterface", "$this->namespaceDataBase\\$context\Domain\Interfaces\\$context" . "BaseRepositoryInterface");
         }
 
         $nombreClase = self::nombreClase($context, $tipo);

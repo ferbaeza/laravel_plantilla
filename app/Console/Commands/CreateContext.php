@@ -16,8 +16,9 @@ class CreateContext extends Command
         'Domain/Exception',
         'Domain/Specification',
         'Infrastructure',
-        'Infrastructure/Web',
-        'Infrastructure/Persistence'
+        'Infrastructure/Bindings',
+        'Infrastructure/Datasource',
+        'Infrastructure/Http',
     ];
 
     /**
@@ -25,7 +26,7 @@ class CreateContext extends Command
      *
      * @var string
      */
-    protected $signature = 'create:context {context}';
+    protected $signature = 'zeta:context {context}';
 
     /**
      * The console command description.

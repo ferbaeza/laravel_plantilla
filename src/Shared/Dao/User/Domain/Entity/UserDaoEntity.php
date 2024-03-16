@@ -5,7 +5,7 @@ namespace Src\Shared\Dao\User\Domain\Entity;
 use Src\Shared\ValueObjects\Shared\UuidValue\Entity\UuidValue;
 use Src\Shared\ValueObjects\Primitivos\Strings\StringValueObject;
 
-class UsuarioRegistrado implements \JsonSerializable
+class UserDaoEntity implements \JsonSerializable
 {
     public function __construct(
         public readonly UuidValue $id,
@@ -14,9 +14,9 @@ class UsuarioRegistrado implements \JsonSerializable
     ) {
     }
 
-    public static function create(string $id, string $nombre, string $email): UsuarioRegistrado
+    public static function create(string $id, string $nombre, string $email): UserDaoEntity
     {
-        return new UsuarioRegistrado(
+        return new UserDaoEntity(
             new UuidValue($id),
             new StringValueObject($nombre),
             new StringValueObject($email)

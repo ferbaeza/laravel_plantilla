@@ -11,8 +11,6 @@ return [
     |
     | Habrá que establecerlo como variable de entorno en producción. Para desarrollo,
     | si no se establece, por defecto es 'password'. Se usa en el DeploySeeder y en el
-    | UsersTableSeeder.
-    |
     */
 
     'super_admin_password' => env('SUPER_ADMIN_PASSWORD', 'password'),

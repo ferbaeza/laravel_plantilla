@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Console\Commands\Shared\DataBase\templates;
+namespace App\Console\Commands\Dao\templates;
 
-use Zataca\Hydrator\Criteria;
-use Src\Shared\Utils\Foundation\BaseRepository\BaseRepositoryInterface;
+use Src\Shared\Criteria\Criteria;
+use Src\Shared\Laravel\Interfaces\BaseRepositoryInterface;
 
 interface ContextBaseRepositoryInterface extends BaseRepositoryInterface
 {

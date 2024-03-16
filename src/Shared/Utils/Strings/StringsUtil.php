@@ -6,6 +6,12 @@ use Symfony\Component\HttpFoundation\Exception\JsonException;
 
 class StringsUtil
 {
+    public static function palabraCapitalizada(string $value): string
+    {
+        $minusculas = self::minusculas($value);
+        return ucfirst($minusculas);
+    }
+
     public static function mayusculas(string $value): string
     {
         return strtoupper($value);
