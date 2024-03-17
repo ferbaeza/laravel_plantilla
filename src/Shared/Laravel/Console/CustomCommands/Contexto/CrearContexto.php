@@ -16,9 +16,9 @@ class CrearContexto extends Command
 
     protected $hidden = false;
     protected $signature = 'zeta:crear-contexto {context?}';
-    protected $description = self::BLUE.'Comando para crear un nuevo'.self::GREENLIGHT.' contexto'.self::BLUE.' en la estructura de carpetas de la aplicación'. self::NO_COLOR;
-    
-    
+    protected $description = self::BLUE . 'Comando para crear un nuevo' . self::GREENLIGHT . ' contexto' . self::BLUE . ' en la estructura de carpetas de la aplicación' . self::NO_COLOR;
+
+
     protected $isFullContext = false;
     protected array $separadores = ["\\", "/", ".", " ", "_", "-"];
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace Src\Shared\Laravel\Console\CustomCommands\Dao\templates;
+
 // namespace App\Console\Commands\Dao\templates;
 
 use Src\Shared\Laravel\Collection\BaseCollection;

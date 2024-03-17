@@ -8,6 +8,7 @@ use Src\Shared\Laravel\Console\Traits\ContextTrait;
 class SeleccionarContextos extends Command
 {
     use ContextTrait;
+
     public const BLUE = "\033[1;34m";
     public const NO_COLOR = "\033[0m";
 
@@ -19,7 +20,7 @@ class SeleccionarContextos extends Command
     protected $signature = 'zeta:selecciona-crea-contexto';
     protected $description = 'Selecciona el Contexto desde los ya creados en ./src/...';
 
-    protected $question = self::BLUE.'En que contexto desea crear la carpeta?'.self::NO_COLOR;
+    protected $question = self::BLUE . 'En que contexto desea crear la carpeta?' . self::NO_COLOR;
     protected $src = '';
     protected $path = '';
     protected $contextoBase = 'src';
@@ -64,7 +65,6 @@ class SeleccionarContextos extends Command
 
             $estructureFolderCommand = "zeta:contexto-carpetas";
             $this->call($estructureFolderCommand, ['context' => $estrucuturaACrear]);
-
         } else {
             $this->contextoBase = $contextoElegido;
             $this->mostrarOpciones($contextoElegido);
@@ -91,7 +91,7 @@ class SeleccionarContextos extends Command
                 $carpetas[] = $nombreDeCarpeta;
             }
         }
-        array_push($carpetas, self::CHARACTER . ' Estas en la carpeta ' . self::BLUE.$this->contextoBase . self::NO_COLOR.' pulsa esta opcion para crear un nuevo contexto');
+        array_push($carpetas, self::CHARACTER . ' Estas en la carpeta ' . self::BLUE . $this->contextoBase . self::NO_COLOR . ' pulsa esta opcion para crear un nuevo contexto');
         array_push($carpetas, $this->contextoBase);
         return $carpetas;
     }

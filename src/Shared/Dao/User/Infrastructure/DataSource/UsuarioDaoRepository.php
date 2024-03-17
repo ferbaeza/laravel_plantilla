@@ -30,7 +30,6 @@ class UsuarioDaoRepository extends BaseRepository implements UsuarioDaoInterface
             id: new UuidValue($usuario['id']),
             nombre: new StringValueObject($usuario['nombre']),
             email: new StringValueObject($usuario['email']),
-
         );
     }
 
@@ -48,5 +47,4 @@ class UsuarioDaoRepository extends BaseRepository implements UsuarioDaoInterface
         }
         return $collection;
     }
-
 }

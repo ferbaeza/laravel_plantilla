@@ -15,7 +15,6 @@ class CustomBaseBindingsProvider extends BaseRegisterBindings
             AuthBindings::singletons(),
             CustomBindings::singletons(),
             SharedDoaBindings::singletons(),
-
         );
     }
 }

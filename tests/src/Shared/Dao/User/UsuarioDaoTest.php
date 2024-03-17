@@ -24,7 +24,7 @@ class UsuarioDaoTest extends TestCase
         parent::setUp();
         $this->repository = $this->app->make(UsuarioDaoInterfaceRepository::class);
     }
-    
+
     /** @test*/
     public function test_usuario_dao_entity()
     {
@@ -43,7 +43,7 @@ class UsuarioDaoTest extends TestCase
     /** @test*/
     public function test_usuario_dao_collection()
     {
-        $expectecUsuarios =3;
+        $expectecUsuarios = 3;
         $dataUser = UserModel::factory()->count($expectecUsuarios)->create();
         $criteria = new Criteria();
         $usuario = $this->repository->getCollection($criteria);
@@ -53,7 +53,7 @@ class UsuarioDaoTest extends TestCase
     }
 
 
-    private function obtenerUsuario():array
+    private function obtenerUsuario(): array
     {
         return [
             'id' => UuidValue::id(),
@@ -67,4 +67,3 @@ class UsuarioDaoTest extends TestCase
         ];
     }
 }
-
