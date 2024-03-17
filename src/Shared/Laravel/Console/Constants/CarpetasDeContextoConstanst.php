@@ -6,14 +6,14 @@ class CarpetasDeContextoConstanst
 {
     const APPLICATION = 'Application';
     const DOMAIN = 'Domain';
-    const COLLECTION = 'Collection';
-    const ENTITY = 'Entity';
-    const EXCEPTION = 'Exception';
-    const INTERFACES = 'Interfaces';
+    const COLLECTION = 'Domain/Collection';
+    const ENTITY = 'Domain/Entity';
+    const EXCEPTION = 'Domain/Exception';
+    const INTERFACES = 'Domain/Interfaces';
     const INFRASTRUCTURE = 'Infrastructure';
-    const BINDINGS = 'Bindings';
-    const DATASOURCE = 'Datasource';
-    const HTTP = 'Http';
+    const BINDINGS = 'Infrastructure/Bindings';
+    const DATASOURCE = 'Infrastructure/Datasource';
+    const HTTP = 'Infrastructure/Http';
 
     public static function carpetas()
     {

@@ -3,13 +3,17 @@
 namespace App\Console\Commands\Dao;
 
 use Illuminate\Support\Str;
-use App\Console\Commands\CreateContext;
-use Src\Shared\Utils\Foundation\StringUtils;
+use Illuminate\Console\Command;
 
-class CreateDataBaseContext extends CreateContext
+use App\Console\Commands\CreateContext;
+use Src\Shared\Laravel\Console\Traits\ContextTrait;
+
+class CreateDaoContext extends Command
 {
-    protected $signature = 'zeta:database {context}';
-    protected $description = 'Comando para crear la estructura de carpetas y sus clases contexto del Shared/Dao';
+    use ContextTrait;
+
+    protected $signature = 'zeta:dao {context}';
+    protected $description = 'Crear el DAO del Modelo en la carpeta ./src/Shared/Dao';
 
     protected static $template = '/app/Console/Commands/Dao/templates';
     protected array $directories = [
@@ -43,12 +47,16 @@ class CreateDataBaseContext extends CreateContext
     protected string $namespaceTemplate = "App\Console\Commands\Dao\\templates";
     protected string $namespaceDataBase = "Src\Shared\Dao";
 
-    public function handle($path = null)
+    public function handle()
     {
-        $path = self::$rootPath;
+        // $path = self::$rootPath;
+        $context = str_replace("\\", "/", $this->argument('context'));
 
-        $context = parent::handle($path);
-        $finalPath = (base_path() . "/src" . $path . "/" . $context);
+        $finalPath = (base_path() . "/src" . self::$rootPath . "/" . $context);
+        $this->crearDirectorio($finalPath);
+        $this->crearSubDirectorios($finalPath);
+        // dd("Final Path: " . $finalPath, '', 00,$finalPath, $context);
+        // $context = parent::handle($path);
         $this->comprobarContextoModulo($context);
         $this->template($finalPath, $context);
     }
