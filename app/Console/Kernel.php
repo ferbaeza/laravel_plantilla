@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Src\Shared\Laravel\Console\CustomCommands\Dao\CreateDaoContext;
 use Src\Shared\Laravel\Console\CustomCommands\Contexto\CrearContexto;
 use Src\Shared\Laravel\Console\CustomCommands\Contexto\CreateFolderContext;
 use Src\Shared\Laravel\Console\CustomCommands\Contexto\SeleccionarContextos;
@@ -16,6 +17,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        CreateDaoContext::class,
         CrearContexto::class,
         CreateFolderContext::class,
         SeleccionarContextos::class,
