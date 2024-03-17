@@ -32,7 +32,7 @@ class SeleccionarContextos extends Command
         $this->path = $this->src;
         $this->mostrarOpciones();
 
-        return $context ?? 0;
+        return 0;
     }
 
     public function mostrarOpciones($contextoElegido = null)

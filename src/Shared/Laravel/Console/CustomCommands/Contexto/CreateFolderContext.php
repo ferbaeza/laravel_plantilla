@@ -19,7 +19,7 @@ class CreateFolderContext extends Command
     protected array $carpetasFormatedas = [];
     protected array $folders = [];
 
-    public function handle($path = null)
+    public function handle()
     {
         $context = $this->argument('context');
         $rootPath = base_path() . "/src" . '/';

@@ -22,7 +22,7 @@ class CrearContexto extends Command
     protected $isFullContext = false;
     protected array $separadores = ["\\", "/", ".", " ", "_", "-"];
 
-    public function handle($path = null)
+    public function handle()
     {
         $context = $this->argument('context');
 
