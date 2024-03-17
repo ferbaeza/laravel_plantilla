@@ -9,11 +9,15 @@ class CreateFolderContext extends Command
 {
     use ContextTrait;
 
+    protected $hidden = true;
     protected $signature = 'zeta:contexto-carpetas {context}';
-    protected $description = 'Comando para crear la estructura de carpetas dado un contexto de la aplicación';
+    protected $description = 'Crea una estructura de carpetas, separadores disponibles "\ / . - _ " ejemplo: user.admin.gestion';
+
     protected $isFullContext = false;
     protected array $separadores = ["\\", "/", ".", " ", "_", "-"];
     protected $currentPath;
+    protected array $carpetasFormatedas = [];
+    protected array $folders = [];
     
     public function handle($path = null)
     {
@@ -24,13 +28,21 @@ class CreateFolderContext extends Command
         foreach ($this->separadores as $separador) {
             if(str_contains($context, $separador)){
                 $this->isFullContext = true;
-                $folders = explode($separador, $context);
-                $this->comprobarDirectorios($folders);
+                $this->folders = explode($separador, $context);
             }
         }
-        $this->crearSubDirectorios($this->currentPath);
-        $this->info($context . ' Pasado correctamente!');
-        return $context ?? 0;
+        $crearDirectoriosContexto = $this->comprobarDirectorios($this->folders);
+        if(!$crearDirectoriosContexto){
+            return 1;
+        }
+
+        $crearSubDirectorios = $this->crearSubDirectorios($this->currentPath);
+        if(!$crearSubDirectorios){
+            return 1;
+        }
+        $contextoFormateado = implode('/',$this->carpetasFormatedas);
+        $this->info($contextoFormateado . ' creado correctamente!');
+        return $contextoFormateado ?? 0;
 
     }
     private function comprobarDirectorios(array $carpetas)
@@ -39,21 +51,21 @@ class CreateFolderContext extends Command
 
         foreach ($carpetas as $key => $folder) {
             $nombreDeCarpeta = $this->nombreFormateado($folder);
+            $this->carpetasFormatedas[] = $nombreDeCarpeta;
             $existeYaLaCarpetaDelContexto = $this->isFolder($this->currentPath.$nombreDeCarpeta);
-            // dd($carpetas, $nombreDeCarpeta, $existeYaLaCarpetaDelContexto);
 
+            if ($existeYaLaCarpetaDelContexto and $key == $numeroDeCarpetas) {
+                $ruta = $this->formatearRutaCarpetas(base_path() . '/src', $this->currentPath);
+                $this->error("La carpeta -> $nombreDeCarpeta ya existe en la ruta : $ruta");
+                return false;
+            }
             if($existeYaLaCarpetaDelContexto){
-                // dump($this->currentPath.$nombreDeCarpeta);
                 $this->currentPath = $this->currentPath . "/" . $nombreDeCarpeta.'/';
                 continue;
             }
 
-            if ($existeYaLaCarpetaDelContexto and $key == $numeroDeCarpetas) {
-                $this->error('La carpeta del contexto ya existe para: ' . $nombreDeCarpeta);
-                return false;
-            }
             if(!$existeYaLaCarpetaDelContexto){
-                $this->crearCarpeta($this->currentPath, $nombreDeCarpeta);
+                return $this->crearCarpeta($this->currentPath, $nombreDeCarpeta);
             }
         }
     }
@@ -63,6 +75,8 @@ class CreateFolderContext extends Command
         if ($this->crearDirectorio($rootPath . "/" . $nombreDeCarpeta)){
             $this->info('Carpeta creada correctamente: ' . $nombreDeCarpeta);
             $this->currentPath = $rootPath . "/" . $nombreDeCarpeta;
+            return true;
         }
+        return false;
     }
 }

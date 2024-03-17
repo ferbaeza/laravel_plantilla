@@ -9,9 +9,12 @@ use Src\Shared\Laravel\Console\Traits\ContextTrait;
 class CreateDaoContext extends Command
 {
     use ContextTrait;
+    public const BLUE = "\033[1;34m";
+    public const NO_COLOR = "\033[0m";
 
-    protected $signature = 'zeta:new-dao {context}';
-    protected $description = 'Crear el DAO del Modelo en la carpeta ./src/Shared/Dao';
+
+    protected $signature = 'zeta:dao {context}';
+    protected $description = 'Crear la estructura de carpetas para el'.self::BLUE.' contexto'.self::NO_COLOR.' del Modelo en la carpeta ./src/Shared/Dao';
 
     protected static $template = '/src/Shared/Laravel/Console/CustomCommands/Dao/templates';
     // protected static $template = '/app/Console/Commands/Dao/templates';

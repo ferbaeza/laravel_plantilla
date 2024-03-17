@@ -8,12 +8,18 @@ use Src\Shared\Laravel\Console\Traits\ContextTrait;
 class SeleccionarContextos extends Command
 {
     use ContextTrait;
+    public const BLUE = "\033[1;34m";
+    public const NO_COLOR = "\033[0m";
 
-    public const EXIT_OPTION = 'Salir';
-    protected $signature = 'zeta:contexto-from-choices';
+
+    public const EXIT_OPTION = 'Pulsa 0 para poder Salir';
+    public const CHARACTER = '##';
+
+    protected $hidden = true;
+    protected $signature = 'zeta:selecciona-crea-contexto';
     protected $description = 'Selecciona el Contexto desde los ya creados en ./src/...';
 
-    protected $question = 'En que contexto desea crear la carpeta?';
+    protected $question = self::BLUE.'En que contexto desea crear la carpeta?'.self::NO_COLOR;
     protected $src = '';
     protected $path = '';
     protected $contextoBase = 'src';
@@ -43,6 +49,12 @@ class SeleccionarContextos extends Command
             $this->info('Has seleccionado Salir!');
             return;
         }
+
+        if (str_contains(self::CHARACTER, $contextoElegido)) {
+            $this->warn('Has seleccionado una opcion equivocada!');
+            return;
+        }
+
         if ($contextoElegido == $this->contextoBase) {
             $this->info("Has seleccionado $this->contextoBase !");
             $nombre = $this->ask('Escribe el nombre del contexto');
@@ -64,7 +76,7 @@ class SeleccionarContextos extends Command
     {
         $carpetas = [];
         $carpetas[0] = self::EXIT_OPTION;
-        $carpetas[] = '-------------------';
+        $carpetas[] = self::CHARACTER;
 
         $contexto = '/' . $contexto ?? "";
         $this->path .= $contexto;
@@ -79,7 +91,7 @@ class SeleccionarContextos extends Command
                 $carpetas[] = $nombreDeCarpeta;
             }
         }
-        array_push($carpetas, '-----------------------');
+        array_push($carpetas, self::CHARACTER . ' Estas en la carpeta ' . self::BLUE.$this->contextoBase . self::NO_COLOR.' pulsa esta opcion para crear un nuevo contexto');
         array_push($carpetas, $this->contextoBase);
         return $carpetas;
     }

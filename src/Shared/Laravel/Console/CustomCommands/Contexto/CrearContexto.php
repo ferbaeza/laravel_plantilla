@@ -9,8 +9,16 @@ class CrearContexto extends Command
 {
     use ContextTrait;
 
+    public const BLUE = "\033[1;34m";
+    public const NO_COLOR = "\033[0m";
+    public const GREENLIGHT = "\033[1;32m";
+
+
+    protected $hidden = false;
     protected $signature = 'zeta:crear-contexto {context?}';
-    protected $description = 'Comando para crear un nuevo Contexto o Carpeta en la estructura de carpetas de la aplicación';
+    protected $description = self::BLUE.'Comando para crear un nuevo'.self::GREENLIGHT.' contexto'.self::BLUE.' en la estructura de carpetas de la aplicación'. self::NO_COLOR;
+    
+    
     protected $isFullContext = false;
     protected array $separadores = ["\\", "/", ".", " ", "_", "-"];
 
@@ -19,12 +27,11 @@ class CrearContexto extends Command
         $context = $this->argument('context');
 
         if (($context == null) || (empty($context))) {
-            $estructureCommand = 'zeta:contexto-from-choices';
+            $estructureCommand = 'zeta:selecciona-crea-contexto';
             $this->call($estructureCommand);
             return $context ?? 0;
         } else {
             $context = $this->nombreFormateado($context);
-            // dd($context);
             $estructureFolderCommand = 'zeta:contexto-carpetas';
             $this->call($estructureFolderCommand, ['context' => $context]);
             return $context ?? 0;

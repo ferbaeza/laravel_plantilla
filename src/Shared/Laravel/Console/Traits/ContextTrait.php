@@ -7,6 +7,13 @@ use Src\Shared\Laravel\Console\Constants\CarpetasDeContextoConstanst;
 
 trait ContextTrait
 {
+    public const BLUE = "\033[1;34m";
+
+    public function blue()
+    {
+        return self::BLUE;
+    }
+
     public function nombreFormateado(string $nombre): string
     {
         return StringsUtil::palabraCapitalizada($nombre);
@@ -29,15 +36,9 @@ trait ContextTrait
 
     public function crearDirectorio(string $path) : bool
     {
-        try {
-            if (mkdir($path, 0755, true) === false) {
-                $this->error('Error al crear la carpeta: ' . $path);
-                return false;
-            }
-            //code...
-        } catch (\Throwable $th) {
-            //throw $th;
-            dd($path);
+        if (mkdir($path, 0755, true) === false) {
+            $this->error('Error al crear la carpeta: ' . $path);
+            return false;
         }
         return true;
     }
