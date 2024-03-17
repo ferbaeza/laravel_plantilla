@@ -42,7 +42,7 @@ class CreateFolderContext extends Command
         }
         $contextoFormateado = implode('/', $this->carpetasFormatedas);
         $this->info($contextoFormateado . ' creado correctamente!');
-        return $contextoFormateado ?? 0;
+        return 0;
     }
     private function comprobarDirectorios(array $carpetas)
     {

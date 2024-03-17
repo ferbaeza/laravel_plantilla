@@ -26,7 +26,7 @@ class CrearContexto extends Command
     {
         $context = $this->argument('context');
 
-        if (($context == null) || (empty($context))) {
+        if (($context == null)) {
             $estructureCommand = 'zeta:selecciona-crea-contexto';
             $this->call($estructureCommand);
             return $context ?? 0;
