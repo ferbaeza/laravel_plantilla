@@ -32,6 +32,7 @@ trait ContextTrait
             $estrucuturaACrear = trim($estrucuturaACrear);
             return $estrucuturaACrear;
         }
+        return $ruta;
     }
 
     public function crearDirectorio(string $path): bool
@@ -45,12 +46,17 @@ trait ContextTrait
 
     public function crearSubDirectorios(string $path): bool
     {
-        foreach (CarpetasDeContextoConstanst::carpetas() as $value) {
-            if (mkdir($path . '/' . $value, 0755, true) === false) {
-                $this->error('Error al crear la carpeta: ' . $path);
-                return false;
+        try {
+            foreach (CarpetasDeContextoConstanst::carpetas() as $value) {
+                if (mkdir($path . '/' . $value, 0755, true) === false) {
+                    $this->error('Error al crear la carpeta: ' . $path);
+                    return false;
+                }
             }
+            return true;
+        } catch (\Exception $e) {
+            $this->error('Error al crear la carpeta: ' . $path);
+            return false;
         }
-        return true;
     }
 }

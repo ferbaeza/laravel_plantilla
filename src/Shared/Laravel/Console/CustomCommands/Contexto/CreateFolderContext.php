@@ -24,13 +24,16 @@ class CreateFolderContext extends Command
         $context = $this->argument('context');
         $rootPath = base_path() . "/src" . '/';
         $this->currentPath = $rootPath;
-
         foreach ($this->separadores as $separador) {
             if (str_contains($context, $separador)) {
                 $this->isFullContext = true;
                 $this->folders = explode($separador, $context);
             }
         }
+        if (!$this->isFullContext) {
+            $this->folders[] = $context;
+        }
+
         $crearDirectoriosContexto = $this->comprobarDirectorios($this->folders);
         if (!$crearDirectoriosContexto) {
             return 1;
@@ -55,8 +58,7 @@ class CreateFolderContext extends Command
 
             if ($existeYaLaCarpetaDelContexto and $key == $numeroDeCarpetas) {
                 $ruta = $this->formatearRutaCarpetas(base_path() . '/src', $this->currentPath);
-                $this->error("La carpeta -> $nombreDeCarpeta ya existe en la ruta : $ruta");
-                return false;
+                $this->warn("La carpeta -> $nombreDeCarpeta ya existe en la ruta : $ruta");
             }
             if ($existeYaLaCarpetaDelContexto) {
                 $this->currentPath = $this->currentPath . "/" . $nombreDeCarpeta . '/';
@@ -64,9 +66,13 @@ class CreateFolderContext extends Command
             }
 
             if (!$existeYaLaCarpetaDelContexto) {
-                return $this->crearCarpeta($this->currentPath, $nombreDeCarpeta);
+                $crearCarpetas = $this->crearCarpeta($this->currentPath, $nombreDeCarpeta);
+                if (!$crearCarpetas) {
+                    return false;
+                }
             }
         }
+        return true;
     }
 
     public function crearCarpeta(string $rootPath, string $nombreDeCarpeta)

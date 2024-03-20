@@ -4,8 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afa05c53dc460d517470ed12a2367690",
+    "content-hash": "3f76d32b44f5d68ada25a2c2f880ced8",
     "packages": [
+        {
+            "name": "baezeta/scaffold",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ferbaeza/Laravel-Context-Scaffolding.git",
+                "reference": "6ce6920dd92cfc8ba1303d495b4885bcf3c9b734"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ferbaeza/Laravel-Context-Scaffolding/zipball/6ce6920dd92cfc8ba1303d495b4885bcf3c9b734",
+                "reference": "6ce6920dd92cfc8ba1303d495b4885bcf3c9b734",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.41",
+                "illuminate/console": "^11.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5",
+                "symfony/var-dumper": "^7.0",
+                "vlucas/phpdotenv": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions/functions.php"
+                ],
+                "psr-4": {
+                    "Baezeta\\Test\\": "test/",
+                    "Baezeta\\Console\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fer Baeza",
+                    "email": "fbaezahurtado@gmail.com"
+                }
+            ],
+            "description": "Scaffold for Laravel projects",
+            "support": {
+                "issues": "https://github.com/ferbaeza/Laravel-Context-Scaffolding/issues",
+                "source": "https://github.com/ferbaeza/Laravel-Context-Scaffolding/tree/v1.0.1"
+            },
+            "time": "2024-03-18T22:49:28+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
