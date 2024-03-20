@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
+// use Baezeta\Console\Scaffolding\Context\CreateScaffoldind;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Src\Shared\Laravel\Console\CustomCommands\Dao\CreateDaoContext;
 use Src\Shared\Laravel\Console\CustomCommands\Contexto\CrearContexto;
@@ -21,6 +22,7 @@ class Kernel extends ConsoleKernel
         CrearContexto::class,
         CreateFolderContext::class,
         SeleccionarContextos::class,
+        // CreateScaffoldind::class,
 
     ];
 
