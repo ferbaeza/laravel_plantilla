@@ -20,7 +20,7 @@ class AuthRoutes extends CustomRoutesProvider
             Route::post('/registrarUsuario', [AuthController::class, 'registrarUsuario'])->name('auth.registrarUsuario');
 
             Route::get('/test', [AuthController::class, 'test'])->name('auth.test')->middleware('auth:sanctum');
-            Route::post('/test', [AuthController::class, 'test'])->name('auth.test')->middleware('auth:sanctum');
+            Route::post('/test', [AuthController::class, 'test'])->name('auth.test-post')->middleware('auth:sanctum');
         });
     }
 }

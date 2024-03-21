@@ -4,6 +4,8 @@ namespace Src\Shared\Laravel\Console\CustomCommands\Contexto;
 
 use Illuminate\Console\Command;
 use Src\Shared\Laravel\Console\Traits\ContextTrait;
+use function Laravel\Prompts\search;
+use function Laravel\Prompts\select;
 
 class SeleccionarContextos extends Command
 {
@@ -11,10 +13,12 @@ class SeleccionarContextos extends Command
 
     public const BLUE = "\033[1;34m";
     public const NO_COLOR = "\033[0m";
+    public const GREEN = "\033[0;32m";
+    public const RED = "\033[1;31m";
 
-
-    public const EXIT_OPTION = 'Pulsa 0 para poder Salir';
-    public const CHARACTER = '##';
+    public const EXIT_OPTION = self::RED . 'Salir';
+    public const OK_OPTION = self::GREEN . 'Ok..!';
+    public const CHARACTER = 'Ahora mismo te encuentras en la carpeta ';
 
     protected $hidden = true;
     protected $signature = 'zeta:selecciona-crea-contexto';
@@ -22,7 +26,7 @@ class SeleccionarContextos extends Command
 
     protected $question = self::BLUE . 'En que contexto desea crear la carpeta?' . self::NO_COLOR;
     protected $src = '';
-    protected $path = '';
+    protected string $path = '';
     protected $contextoBase = 'src';
 
 
@@ -30,58 +34,70 @@ class SeleccionarContextos extends Command
     {
         $this->src = base_path() . '/' . $this->contextoBase;
         $this->path = $this->src;
-        $this->mostrarOpciones();
 
-        return 0;
+        $this->mostrarOpciones();
+        return Command::SUCCESS;
     }
 
     public function mostrarOpciones($contextoElegido = null)
     {
-        if (!$contextoElegido === null) {
+        if (!$contextoElegido == null) {
             $this->info('Has seleccionado: ' . $contextoElegido);
-            $this->path = $this->path . '/' . $contextoElegido;
         }
 
         $carpetas = $this->obtenerCarpetas($contextoElegido);
-        $contextoElegido = $this->choice($this->question, $carpetas);
-
+        $contextoElegido = windows_os()
+            ? select(
+                "Selecciona la carpeta donde deseas crear la estructura de carpetas",
+            $carpetas,
+                scroll: 15,
+            )
+            : search(
+                label: "Selecciona la carpeta donde deseas crear la estructura de carpetas",
+                placeholder: 'Busca entre las opciones...',
+                options: fn ($search) => array_values(array_filter(
+                $carpetas,
+                    fn ($choice) => str_contains(strtolower($choice), strtolower($search))
+                )),
+                scroll: 15,
+            );
 
         if ($contextoElegido == self::EXIT_OPTION) {
             $this->info('Has seleccionado Salir!');
             return;
         }
-
-        if (str_contains(self::CHARACTER, $contextoElegido)) {
+        if ($contextoElegido == self::OK_OPTION) {
+            $this->elegirNombreDelContexto();
+            return;
+        }
+        if (str_contains($contextoElegido,self::CHARACTER)) {
             $this->warn('Has seleccionado una opcion equivocada!');
             return;
         }
 
-        if ($contextoElegido == $this->contextoBase) {
-            $this->info("Has seleccionado $this->contextoBase !");
-            $nombre = $this->ask('Escribe el nombre del contexto');
-            $fullPath = $this->path . '/' . $nombre;
-
-            $estrucuturaACrear = $this->formatearRutaCarpetas($this->src, $fullPath);
-
-            $estructureFolderCommand = "zeta:contexto-carpetas";
-            $this->call($estructureFolderCommand, ['context' => $estrucuturaACrear]);
-        } else {
-            $this->contextoBase = $contextoElegido;
-            $this->mostrarOpciones($contextoElegido);
-        }
+        $this->contextoBase = $contextoElegido;
+        $this->mostrarOpciones($contextoElegido);
     }
 
+    private function elegirNombreDelContexto()
+    {
+        $this->info("Has seleccionado $this->contextoBase !");
+        $question = self::BLUE . 'Escribe el nombre del contexto que deseas crear' . self::NO_COLOR;
+        $nombre = $this->ask($question);
+        $fullPath = $this->path . '/' . $nombre;
+
+        $estrucuturaACrear = $this->formatearRutaCarpetas($this->src, $fullPath);
+        $estructureFolderCommand = "zeta:contexto-carpetas";
+        $this->call($estructureFolderCommand, ['context' => $estrucuturaACrear]);
+    }
 
     private function obtenerCarpetas($contexto = null)
     {
-        $carpetas = [];
-        $carpetas[0] = self::EXIT_OPTION;
-        $carpetas[] = self::CHARACTER;
-
-        $contexto = '/' . $contexto ?? "";
+        $contexto = '/'.$contexto ?? "";
         $this->path .= $contexto;
         $src = $this->path;
 
+        $carpetas = [];
         $folders = array_filter(glob($src . '/*'), 'is_dir');
         if (count($folders) > 0) {
             foreach ($folders as $folder) {
@@ -91,8 +107,10 @@ class SeleccionarContextos extends Command
                 $carpetas[] = $nombreDeCarpeta;
             }
         }
-        array_push($carpetas, self::CHARACTER . ' Estas en la carpeta ' . self::BLUE . $this->contextoBase . self::NO_COLOR . ' pulsa esta opcion para crear un nuevo contexto');
-        array_push($carpetas, $this->contextoBase);
+        $contextoBaseFormateado = self::CHARACTER .self::BLUE . $this->contextoBase;
+        array_push($carpetas, $contextoBaseFormateado);
+        array_push($carpetas, self::OK_OPTION);
+        array_push($carpetas, self::EXIT_OPTION);
         return $carpetas;
     }
 }
