@@ -9,5 +9,6 @@ use Src\Shared\Dao\Context\Domain\Entity\ContextBaseEntity;
 
 class ContextBaseCollection extends BaseCollection
 {
+    /** @phpstan-ignore-next-line */
     protected $type = ContextBaseEntity::class;
 }

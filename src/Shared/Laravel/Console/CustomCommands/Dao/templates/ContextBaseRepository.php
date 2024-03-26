@@ -11,10 +11,14 @@ use Src\Shared\Dao\Context\Domain\Entity\ContextBaseEntity;
 use Src\Shared\Dao\Context\Domain\Collection\ContextBaseCollection;
 use App\Console\Commands\Dao\templates\ContextBaseRepositoryInterface;
 
+/** @phpstan-ignore-next-line */
 class ContextBaseRepository extends BaseRepository implements ContextBaseRepositoryInterface
 {
+    /** @phpstan-ignore-next-line */
     protected string $modelClass = ContextModel::class;
+    /** @phpstan-ignore-next-line */
     protected string $collection = ContextBaseCollection::class;
+    /** @phpstan-ignore-next-line */
     protected string $entity = ContextBaseEntity::class;
 
     public function getEntity(Criteria $criteria)
@@ -24,14 +28,14 @@ class ContextBaseRepository extends BaseRepository implements ContextBaseReposit
             throw new Exception("No existe $this->modelClass");
         }
         $usuario = $response->toArray();
-        return;
+        return $usuario;
     }
 
     public function getCollection(Criteria $criteria)
     {
         $returnCollection = new $this->collection();
         $collecion = $this->getModelCollection($criteria);
-        $response = $collecion->toArray();
+        $collecion->toArray();
         return $returnCollection;
     }
 }

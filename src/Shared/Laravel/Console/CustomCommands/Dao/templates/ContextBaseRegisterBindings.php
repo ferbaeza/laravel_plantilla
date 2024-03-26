@@ -12,6 +12,7 @@ class ContextBaseRegisterBindings
     public static function singletons(): array
     {
         return [
+            /** @phpstan-ignore-next-line */
             ContextBaseRepositoryInterface::class => ContextBaseRepository::class,
         ];
     }

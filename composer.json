@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "baezeta/laravel-10-scaffold": "^1.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
@@ -38,6 +39,7 @@
     "scripts": {
         "auto": "composer dump-autoload -o",
         "load": "composer dump-autoload -o",
+        "stan": "vendor/bin/phpstan analyse src --level 2 --configuration qa/stan/phpstan.neon",
         "migrate:dev": "php artisan migrate:fresh && php artisan db:seed",
         "migrate:deploy": "php artisan migrate && php artisan db:seed --class=DeploySeeder",
         "migrate:testing": "php artisan migrate:fresh --env=testing && php artisan db:seed --env=testing --class=TestingSeeder",

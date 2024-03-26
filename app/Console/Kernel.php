@@ -3,12 +3,11 @@
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
-// use Baezeta\Console\Scaffolding\Context\CreateScaffoldind;
+use Baezeta\Console\Scaffolding\Context\CreateScaffoldind;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Src\Shared\Laravel\Console\CustomCommands\Dao\CreateDaoContext;
-use Src\Shared\Laravel\Console\CustomCommands\Contexto\CrearContexto;
-use Src\Shared\Laravel\Console\CustomCommands\Contexto\CreateFolderContext;
-use Src\Shared\Laravel\Console\CustomCommands\Contexto\SeleccionarContextos;
+use Baezeta\Console\Scaffolding\Context\Commands\CreateFolderContext;
+use Baezeta\Console\Scaffolding\Context\Commands\SeleccionarContextos;
 
 class Kernel extends ConsoleKernel
 {
@@ -19,10 +18,10 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         CreateDaoContext::class,
-        CrearContexto::class,
+
         CreateFolderContext::class,
         SeleccionarContextos::class,
-        // CreateScaffoldind::class,
+        CreateScaffoldind::class,
 
     ];
 
@@ -34,6 +33,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        // $schedule->command('custom:comand')->everyMinute();
+        // $schedule->command('custom:comandDos')->everyTenMinutes();
+        // $schedule->command('custom:customTrs')->dailyAt('00:05');
     }
 
     /**

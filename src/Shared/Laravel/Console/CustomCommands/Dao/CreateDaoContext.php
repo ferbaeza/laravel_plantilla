@@ -14,7 +14,7 @@ class CreateDaoContext extends Command
     public const NO_COLOR = "\033[0m";
 
 
-    protected $signature = 'zeta:dao {context}';
+    protected $signature = 'z-plantilla:dao {context}';
     protected $description = 'Crear la estructura de carpetas para el' . self::BLUE . ' contexto' . self::NO_COLOR . ' del Modelo en la carpeta ./src/Shared/Dao';
 
     protected static $template = '/src/Shared/Laravel/Console/CustomCommands/Dao/templates';
@@ -64,7 +64,7 @@ class CreateDaoContext extends Command
         $this->template($finalPath, $context);
 
         $this->info($context . ' Creado correctamente!');
-        return $context ?? 0;
+        return $context;
     }
 
     private function comprobarContextoModulo($context)
