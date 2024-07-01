@@ -9,12 +9,4 @@ class InvitacionConfirmadadDto
         public readonly string $email,
     ) {
     }
-
-    public static function create(string $email): self
-    {
-        return new self(
-            estado: true,
-            email: $email
-        );
-    }
 }

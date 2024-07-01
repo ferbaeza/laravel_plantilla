@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Auth\Infrastructure\Http\Requests;
+namespace Src\Usuario\Infrastructure\Http\Requests;
 
 use Src\Shared\Utils\Http\ApiRequest;
 

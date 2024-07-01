@@ -3,12 +3,12 @@
 namespace Src\Auth\Application;
 
 use Src\Auth\Application\LoginUsuarioCommand;
-use Src\Auth\Domain\Interfaces\UsuarioInterfaceRepository;
+use Src\Auth\Domain\Interfaces\AuthUsuarioInterfaceRepository;
 
 class LoginUsuarioCommandHandler
 {
     public function __construct(
-        protected UsuarioInterfaceRepository $usuarioRepository,
+        protected AuthUsuarioInterfaceRepository $usuarioRepository,
     ) {
     }
 

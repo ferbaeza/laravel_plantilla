@@ -4,8 +4,8 @@ namespace Src\Auth\Infrastructure\Bindings;
 
 use Src\Auth\Infrastructure\Datasource\RegisterRepository;
 use Src\Auth\Domain\Interfaces\RegisterInterfaceRepository;
-use Src\Auth\Infrastructure\Datasource\UsuarioRepository;
-use Src\Auth\Domain\Interfaces\UsuarioInterfaceRepository;
+use Src\Auth\Infrastructure\Datasource\AuthUsuarioRepository;
+use Src\Auth\Domain\Interfaces\AuthUsuarioInterfaceRepository;
 
 class AuthBindings
 {
@@ -13,7 +13,7 @@ class AuthBindings
     {
         return [
             RegisterInterfaceRepository::class => RegisterRepository::class,
-            UsuarioInterfaceRepository::class => UsuarioRepository::class,
+            AuthUsuarioInterfaceRepository::class => AuthUsuarioRepository::class,
         ];
     }
 }

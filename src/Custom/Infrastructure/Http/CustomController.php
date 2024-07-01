@@ -19,12 +19,12 @@ class CustomController extends BaseController
 
     public function error401()
     {
-        return view('errors.401');
+        return ApiResponse::json(content: [], status: ApiResponse::ESTADO_401_NO_AUTORIZADO);
     }
 
     public function error()
     {
-        return $this->error401();
+        return ApiResponse::json(content: [], status: ApiResponse::ESTADO_401_NO_AUTORIZADO);
     }
 
     public function getUsusarioByEmail(string $email)

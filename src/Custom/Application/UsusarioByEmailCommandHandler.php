@@ -26,7 +26,7 @@ class UsusarioByEmailCommandHandler
         $criteria->where('email', $command->getEmail());
         $criteria->with('roles');
         $usuario = $this->usuarioRepository->getEntity($criteria);
-        // $usuario = $this->usuarioRepository->getCollection($criteria);
+
         $repo = $this->repository->save($usuario);
         return
             [

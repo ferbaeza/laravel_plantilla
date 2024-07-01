@@ -37,7 +37,7 @@ abstract class BaseRegisterBindings
      *
      * @return array
      */
-    protected function binds(): array
+    protected function  binds(): array
     {
         // Sobreescribir este método
         return [];

@@ -47,6 +47,6 @@ class RegisterRepository extends BaseRepository implements RegisterInterfaceRepo
         $model->email_verified = true;
         $model->save();
 
-        return InvitacionConfirmadadDto::create($model->email);
+        return new InvitacionConfirmadadDto(estado: true, email: $model->email);
     }
 }

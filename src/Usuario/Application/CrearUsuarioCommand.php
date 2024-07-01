@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Auth\Application;
+namespace Src\Usuario\Application;
 
 class CrearUsuarioCommand
 {

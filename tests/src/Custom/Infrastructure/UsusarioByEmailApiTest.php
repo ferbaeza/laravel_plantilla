@@ -7,7 +7,7 @@ use Src\Shared\Dao\User\Infrastructure\Eloquent\UserModel;
 use Src\Shared\Laravel\Exceptions\Usuario\UserNoExisteException;
 use Src\Shared\ValueObjects\Shared\UuidValue\Entity\UuidValue;
 
-class UsusarioByEmailCommandHandlerApiTest extends TestCase
+class UsusarioByEmailApiTest extends TestCase
 {
     protected function setUp(): void
     {
@@ -23,9 +23,10 @@ class UsusarioByEmailCommandHandlerApiTest extends TestCase
         ])->create();
 
         UserModel::factory()->count(10)->create();
-
-        $response = $this->get("/api/custom/getUsusarioByEmail/$usuario->email");
+        
+        $response = $this->get(route('custom.getUsusarioByEmail', $usuario->email));
         $response->assertStatus(200);
+        $response->dd();
         $response->assertJsonStructure([
             'data' => [
                 'Usuario buscado segun Criteria' => [

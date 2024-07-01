@@ -5,6 +5,7 @@ namespace Src\Shared\Laravel\Providers\Routes;
 use Illuminate\Support\Facades\Route;
 use Src\Auth\Infrastructure\Http\AuthRoutes;
 use Src\Custom\Infrastructure\Http\CustomRoutes;
+use Src\Usuario\Infrastructure\Http\UsuarioRoutes;
 use Src\Shared\Laravel\Providers\Routes\Domain\RoutesBaseRegister;
 
 class CustomRoutesProvider extends RoutesBaseRegister
@@ -17,6 +18,7 @@ class CustomRoutesProvider extends RoutesBaseRegister
             ->group(function () {
                 CustomRoutes::register();
                 AuthRoutes::register();
+                UsuarioRoutes::register();
             });
     }
 }
