@@ -4,10 +4,12 @@
 
 ## Esta Plantilla
 
-Una vez clonado o descragado el repositorio - [link de Descarga](https://github.com/ferbaeza/laravel_plantilla) necesitaremos lanzar el comando de instalacion ```composer install```
+Selecciona la rama segun la version de **Laravel** que deseamos instalar y descargamos el proyecto:
 
+- ***laravel-10***
+- ***laravel-11***
 
-
+Una vez clonado o descragado el repositorio - [link de Descarga](https://github.com/ferbaeza/laravel_plantilla) necesitaremos lanzar el comando de instalacion ```composer install``` 
 
 
 ## Info about Laravel FrameWork
