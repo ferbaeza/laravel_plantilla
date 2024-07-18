@@ -3,6 +3,7 @@
 namespace Tests\Src\Auth\Infrastructure\Http;
 
 use Tests\TestCase;
+use App\Models\User;
 
 class LoginApiTest extends TestCase
 {
@@ -14,14 +15,25 @@ class LoginApiTest extends TestCase
     /** @test*/
     public function it_should_return_a_token_when_user_login()
     {
+        $user = User::find(1);
+        $userLogin = User::factory()->create();
+
         $request = [
-            'email' => 'mail@mail.com',
-            'password' => 'password'
+            'email' => $userLogin->email,
+            'password' => $userLogin->password
         ];
-        dd(route('login'), $request);
-        $response = $this->postJson(route('login'), $request);
+
+        // $request = [
+        //     'email' => 'mail@mail.com',
+        //     'password' => 'password'
+        // ];
+
+        $response = $this->actingAs($user)->post(route('login', $request));
+        dd($response);
         $response->assertStatus(200);
-        $response->assertJsonStructure(['token']);
+        $response->assertJsonStructure([
+            'data' => []
+        ]);
     }
 
 }

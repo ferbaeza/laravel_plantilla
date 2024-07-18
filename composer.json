@@ -32,6 +32,9 @@
         }
     },
     "scripts": {
+        "migrate:dev": "php artisan migrate:fresh && php artisan db:seed",
+        "migrate:deploy": "php artisan migrate && php artisan db:seed --class=DeploySeeder",
+        "migrate:testing": "php artisan migrate:fresh --env=testing && php artisan db:seed --env=testing --class=TestingSeeder",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
