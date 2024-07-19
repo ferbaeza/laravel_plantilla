@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Database\Seeders\TestingSeeder;
+use Illuminate\Support\Facades\Schema;
+use Database\Seeders\TruncateAllTablesSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $this->command->info('Comienza a ejecutarse el DatabaseSeeder:');
+        DB::beginTransaction();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        Schema::disableForeignKeyConstraints();
+
+        $this->call([
+            TruncateAllTablesSeeder::class,
+            TestingSeeder::class,
         ]);
+
+        Schema::enableForeignKeyConstraints();
+        DB::commit();
     }
 }
