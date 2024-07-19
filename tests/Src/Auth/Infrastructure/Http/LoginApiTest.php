@@ -29,7 +29,8 @@ class LoginApiTest extends TestCase
         // ];
 
         $response = $this->actingAs($user)->post(route('login', $request));
-        dd($response);
+        dd($response->json());
+        $response->dd();
         $response->assertStatus(200);
         $response->assertJsonStructure([
             'data' => []

@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Auth\Infrastructure\Http;
+namespace Src\Auth\Core\Laravel\Http;
 
 use Illuminate\Support\Facades\Route;
 use Baezeta\Kernel\Laravel\Routes\BaseRoutes;
@@ -13,7 +13,7 @@ class AuthRoutes extends BaseRoutes
     {
         Route::prefix(self::$prefix)
             ->group(function () {
-                Route::post('login', [AuthController::class, 'login'])->name('login');
+                Route::post('login', [AuthController::class, 'login'])->name('login')->withoutMiddleware(['auth:sanctum']);
                 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
             });
     }

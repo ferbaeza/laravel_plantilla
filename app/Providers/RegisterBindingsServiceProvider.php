@@ -2,20 +2,27 @@
 
 namespace App\Providers;
 
+use Src\Shared\SharedRegisterBindings;
 use Illuminate\Support\ServiceProvider;
 
 class RegisterBindingsServiceProvider extends ServiceProvider
 {
     protected array $bindingsPackage = [
-        //
+        SharedRegisterBindings::class,
     ];
 
     /**
      * Register services.
+     * Registrar los bindings de la aplicación
      */
     public function register(): void
     {
-        $this->registerBindings();
+        foreach ($this->bindingsPackage as $packageRegister) {
+            $bindings = new $packageRegister($this->app);
+            foreach ($bindings->bindings() as $key => $value) {
+                $this->app->bind($key, $value);
+            }
+        }
     }
 
     /**
@@ -24,17 +31,5 @@ class RegisterBindingsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-    }
-
-    /**
-     * Registrar los bindings de la aplicación
-     */
-    protected function registerBindings()
-    {
-        foreach ($this->bindingsPackage as $key => $value) {
-            is_numeric($key)
-                ? $this->app->singleton($value)
-                : $this->app->singleton($key, $value);
-        }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Auth\Infrastructure\Http\Requests;
+namespace Src\Auth\Core\Laravel\Http\Requests;
 
 use Baezeta\Kernel\Laravel\Requests\APIRequest;
 

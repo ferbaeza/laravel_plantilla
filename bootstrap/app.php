@@ -1,6 +1,6 @@
 <?php
 
-use Src\Shared\SharedRoutesRegister;
+use Src\Shared\SharedRegisterRoutes;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use Src\Auth\Infrastructure\Http\AuthRoutes;
@@ -18,7 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
             Route::prefix('/api')
                 ->middleware('api')
                 ->group(function () {
-                    SharedRoutesRegister::register();
+            SharedRegisterRoutes::register();
                 });
         },
     )
