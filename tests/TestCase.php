@@ -2,13 +2,16 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    // protected function setUp(): void
-    // {
-    //     parent::setUp();
-    // }
-    //
+    use DatabaseTransactions;
+ 
+    protected function setUp(): void
+    {
+        parent::setUp();
+    }
+    
 }

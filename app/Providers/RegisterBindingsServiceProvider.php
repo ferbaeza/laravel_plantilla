@@ -4,11 +4,13 @@ namespace App\Providers;
 
 use Src\Shared\SharedRegisterBindings;
 use Illuminate\Support\ServiceProvider;
+use Src\Shared\DAO\DAORegisterBindings;
 
 class RegisterBindingsServiceProvider extends ServiceProvider
 {
     protected array $bindingsPackage = [
         SharedRegisterBindings::class,
+        DAORegisterBindings::class,
     ];
 
     /**
@@ -23,6 +25,7 @@ class RegisterBindingsServiceProvider extends ServiceProvider
                 $this->app->bind($key, $value);
             }
         }
+        // dd(app()->getBindings());
     }
 
     /**

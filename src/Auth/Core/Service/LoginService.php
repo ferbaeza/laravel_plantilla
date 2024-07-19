@@ -9,14 +9,22 @@ class LoginService
     /**
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
-    public function login(string $user, string $password, bool $recordar = false): bool
+    public function loginByEmail(string $identidad, string $password, bool $recordar = false): bool
     {
-        if (Auth::attempt(['usuario' => $user, 'password' => ($password)], $recordar)) {
+        if (Auth::attempt(['email' => $identidad, 'password' => ($password)], $recordar)) {
             return true;
         }
+        return false;
+    }
 
-        
-
+    /**
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function loginByName(string $identidad, string $password, bool $recordar = false): bool
+    {
+        if (Auth::attempt(['name' => $identidad, 'password' => ($password)], $recordar)) {
+            return true;
+        }
         return false;
     }
 

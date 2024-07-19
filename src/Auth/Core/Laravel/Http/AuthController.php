@@ -3,8 +3,9 @@
 namespace Src\Auth\Core\Laravel\Http;
 
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
-use Src\Auth\Core\Ports\AuthLoginPortInterface;
+use Src\Auth\Core\Ports\Driver\AuthLoginDriverInterface;
 use Baezeta\Kernel\Laravel\Response\ApiResponse;
 use Baezeta\Kernel\Laravel\Controller\BaseController;
 use Src\Auth\Core\Laravel\Http\Requests\LoginRequest;
@@ -12,23 +13,21 @@ use Src\Auth\Core\Laravel\Http\Requests\LoginRequest;
 class AuthController extends BaseController
 {
     public function __construct(
-        public readonly AuthLoginPortInterface $loginInterface
+        public readonly AuthLoginDriverInterface $loginInterface
     )
         {
     }
-    public function login(LoginRequest $request)
+    public function login(LoginRequest $request): JsonResponse
     {
         $request->validated();
-        $reponse = $this->loginInterface->login($request->email, $request->password);
-
-        return ApiResponse::success(message: "", data: $reponse);
+        $reponse = $this->loginInterface->login(identidad: $request->name, password: $request->password);
+        return ApiResponse::success(message: "Login success", data: $reponse);
     }
 
-    public function logout()
+    public function logout(): JsonResponse
     {
-        return response()->json([
-            'message' => 'Logout success'
-        ]);
+        Auth::logout();
+        return ApiResponse::success(message: "Logout success", data: []);
     }
 
 }

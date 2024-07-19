@@ -15,20 +15,14 @@ class LoginApiTest extends TestCase
     /** @test*/
     public function it_should_return_a_token_when_user_login()
     {
-        $user = User::find(1);
-        $userLogin = User::factory()->create();
+        $userLogin = User::find(1);
 
         $request = [
-            'email' => $userLogin->email,
-            'password' => $userLogin->password
+            'name' => $userLogin->name,
+            'password' => 'password'
         ];
 
-        // $request = [
-        //     'email' => 'mail@mail.com',
-        //     'password' => 'password'
-        // ];
-
-        $response = $this->actingAs($user)->post(route('login', $request));
+        $response = $this->post(route('login', $request));
         dd($response->json());
         $response->dd();
         $response->assertStatus(200);

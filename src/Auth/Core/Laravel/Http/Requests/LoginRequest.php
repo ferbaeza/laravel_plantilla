@@ -9,7 +9,7 @@ class LoginRequest extends APIRequest
     public function rules() : array
     {
         return [
-            'email' => 'bail|required|email',   
+            'name' => 'bail|required|string',
             'password' => 'bail|required',
         ];
     }

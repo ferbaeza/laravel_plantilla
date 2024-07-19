@@ -4,8 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "434dd15e390b67cd1f0180eefbdf28d3",
+    "content-hash": "de9ffc71c4abce5a4f7c111181dbd478",
     "packages": [
+        {
+            "name": "baezeta/laravel-10-scaffold",
+            "version": "v1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ferbaeza/Laravel-Context-Scaffolding.git",
+                "reference": "38d100c8225b46fa23096e8fc103f92f94c11b02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ferbaeza/Laravel-Context-Scaffolding/zipball/38d100c8225b46fa23096e8fc103f92f94c11b02",
+                "reference": "38d100c8225b46fa23096e8fc103f92f94c11b02",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.41",
+                "illuminate/console": "^11.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5",
+                "symfony/var-dumper": "^7.0",
+                "vlucas/phpdotenv": "^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Baezeta\\Console\\ContextServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions/functions.php"
+                ],
+                "psr-4": {
+                    "Baezeta\\Test\\": "test/",
+                    "Baezeta\\Console\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fer Baeza",
+                    "email": "fbaezahurtado@gmail.com"
+                }
+            ],
+            "description": "Scaffold for Laravel 10.x projects",
+            "support": {
+                "issues": "https://github.com/ferbaeza/Laravel-Context-Scaffolding/issues",
+                "source": "https://github.com/ferbaeza/Laravel-Context-Scaffolding/tree/v1.1.4"
+            },
+            "time": "2024-06-17T12:21:15+00:00"
+        },
         {
             "name": "baezeta/laravel-kernel",
             "version": "v0.0.10",
@@ -1370,6 +1426,70 @@
                 "source": "https://github.com/laravel/prompts/tree/v0.1.24"
             },
             "time": "2024-06-17T13:58:22+00:00"
+        },
+        {
+            "name": "laravel/sanctum",
+            "version": "v4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "9cfc0ce80cabad5334efff73ec856339e8ec1ac1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/9cfc0ce80cabad5334efff73ec856339e8ec1ac1",
+                "reference": "9cfc0ce80cabad5334efff73ec856339e8ec1ac1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/console": "^11.0",
+                "illuminate/contracts": "^11.0",
+                "illuminate/database": "^11.0",
+                "illuminate/support": "^11.0",
+                "php": "^8.2",
+                "symfony/console": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^9.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sanctum\\SanctumServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Sanctum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
+            "keywords": [
+                "auth",
+                "laravel",
+                "sanctum"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/sanctum/issues",
+                "source": "https://github.com/laravel/sanctum"
+            },
+            "time": "2024-04-10T19:39:58+00:00"
         },
         {
             "name": "laravel/serializable-closure",
