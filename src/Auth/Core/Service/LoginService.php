@@ -3,6 +3,7 @@
 namespace Src\Auth\Core\Service;
 
 use Illuminate\Support\Facades\Auth;
+use Baezeta\Kernel\Utils\Primitivos\StringUtils;
 
 class LoginService
 {
@@ -11,7 +12,7 @@ class LoginService
      */
     public function loginByEmail(string $identidad, string $password, bool $recordar = false): bool
     {
-        if (Auth::attempt(['email' => $identidad, 'password' => ($password)], $recordar)) {
+        if (Auth::attempt(['email' => StringUtils::minusculas($identidad), 'password' => ($password)], $recordar)) {
             return true;
         }
         return false;
@@ -22,7 +23,7 @@ class LoginService
      */
     public function loginByName(string $identidad, string $password, bool $recordar = false): bool
     {
-        if (Auth::attempt(['name' => $identidad, 'password' => ($password)], $recordar)) {
+        if (Auth::attempt(['name' => StringUtils::capitalizar($identidad), 'password' => ($password)], $recordar)) {
             return true;
         }
         return false;

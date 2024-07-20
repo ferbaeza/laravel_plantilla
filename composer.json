@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.2",
         "baezeta/laravel-10-scaffold": "^1.1",
-        "baezeta/laravel-kernel": "^0.0.10",
+        "baezeta/laravel-kernel": "^0.0.12",
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9"

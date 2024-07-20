@@ -11,6 +11,7 @@ final class AuthLoginCommand extends CommandBase
         public readonly string $password
     )
         {
+            parent::__construct();
     }
 
 }

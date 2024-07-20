@@ -2,9 +2,11 @@
 
 namespace Database\seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+use Database\Seeders\TruncateAllTablesSeeder;
+use Src\Auth\Core\Laravel\Eloquent\UserSeeder;
 
 class TestingSeeder extends Seeder
 {
@@ -14,10 +16,17 @@ class TestingSeeder extends Seeder
     public function run(): void
     {
 
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => bcrypt('password'),
+        $this->command->info('Comienza a ejecutarse el Testing Seeder:');
+        DB::beginTransaction();
+
+        Schema::disableForeignKeyConstraints();
+
+        $this->call([
+            TruncateAllTablesSeeder::class,
+            UserSeeder::class,
         ]);
+
+        Schema::enableForeignKeyConstraints();
+        DB::commit();
     }
 }

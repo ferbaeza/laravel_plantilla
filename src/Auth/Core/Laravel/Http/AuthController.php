@@ -16,17 +16,18 @@ class AuthController extends BaseController
         public readonly AuthLoginDriverInterface $loginInterface
     )
         {
+            parent::__construct();
     }
     public function login(LoginRequest $request): JsonResponse
     {
         $request->validated();
         $reponse = $this->loginInterface->login(identidad: $request->name, password: $request->password);
-        return ApiResponse::success(message: "Login success", data: $reponse);
+        return $this->sendResponse('Login success',$reponse);
     }
 
     public function logout(): JsonResponse
     {
-        Auth::logout();
+        // Auth::logout();
         return ApiResponse::success(message: "Logout success", data: []);
     }
 

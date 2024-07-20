@@ -4,6 +4,7 @@ namespace Src\Shared\DAO\Usuario\Infrastructure\Datasource;
 
 use Baezeta\Kernel\Criteria\Criteria;
 use Src\Shared\Laravel\BaseRepository;
+use Src\Shared\DAO\Usuario\Domain\Factory\UsuarioFactory;
 use Src\Shared\DAO\Usuario\Infrastructure\Eloquent\UsuarioModel;
 use Src\Shared\DAO\Usuario\Domain\Exceptions\UsuarioNoExisteException;
 use Src\Shared\DAO\Usuario\Domain\Interfaces\UsuarioEloquentRepositoryInterface;
@@ -18,8 +19,7 @@ class UsuarioEloquentRepository extends BaseRepository implements UsuarioEloquen
         if (!$model) {
             throw UsuarioNoExisteException::create();;
         }
-        dd($model->toArray());
-        return $model->toArray();
+        return UsuarioFactory::create($model->toArray());
     }
 
 }
