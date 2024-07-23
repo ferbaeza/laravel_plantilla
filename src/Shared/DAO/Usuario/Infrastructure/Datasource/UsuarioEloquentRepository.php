@@ -3,7 +3,7 @@
 namespace Src\Shared\DAO\Usuario\Infrastructure\Datasource;
 
 use Baezeta\Kernel\Criteria\Criteria;
-use Src\Shared\Laravel\BaseRepository;
+use Baezeta\Kernel\Laravel\Repository\BaseRepository;
 use Src\Shared\DAO\Usuario\Domain\Factory\UsuarioFactory;
 use Src\Shared\DAO\Usuario\Infrastructure\Eloquent\UsuarioModel;
 use Src\Shared\DAO\Usuario\Domain\Exceptions\UsuarioNoExisteException;

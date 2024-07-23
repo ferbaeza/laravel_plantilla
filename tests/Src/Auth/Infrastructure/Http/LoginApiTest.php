@@ -15,7 +15,7 @@ class LoginApiTest extends TestCase
     }
 
     #[Test]
-    public function it_should_return_a_token_when_user_login()
+    public function it_should_return_a_user_when_login()
     {
         $userLogin = UsuarioTestModel::admin();
         $request = [
@@ -25,6 +25,7 @@ class LoginApiTest extends TestCase
 
         $response = $this->post(route('login', $request));
         $response->assertStatus(200);
+        // dd($response->json());
         $response->assertJsonStructure([
             'data' => [
                 'id',
