@@ -24,8 +24,8 @@ class UserSeeder extends Seeder
     {
         $this->command->info('Comienza a ejecutarse el User Auth Seeder:');
         $data = [
-            ['id' => UuidValue::create(), 'name' => StringUtils::capitalizar(self::ADMIN), 'usuario' => self::ADMIN, 'email' => self::ADMIN_EMAIL, 'password' => bcrypt(self::PASSWORD)],
-            ['id' => UuidValue::create(), 'name' => StringUtils::capitalizar(self::USER), 'usuario' => self::USER, 'email' => self::USER_EMAIL, 'password' => bcrypt(self::PASSWORD)],
+            ['id' => UuidValue::create()->value(), 'name' => StringUtils::capitalizar(self::ADMIN), 'usuario' => self::ADMIN, 'email' => self::ADMIN_EMAIL, 'password' => bcrypt(self::PASSWORD)],
+            ['id' => UuidValue::create()->value(), 'name' => StringUtils::capitalizar(self::USER), 'usuario' => self::USER, 'email' => self::USER_EMAIL, 'password' => bcrypt(self::PASSWORD)],
         ];
 
         foreach ($data as $seed) {
