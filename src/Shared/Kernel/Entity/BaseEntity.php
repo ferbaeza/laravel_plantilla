@@ -2,10 +2,9 @@
 
 namespace Src\Shared\Kernel\Entity;
 
-use Src\Shared\Kernel\Entity\CustomBaseEntity;
+use Src\Shared\Kernel\Base\BaseKernelEntity;
 
-
-class EntityBase extends CustomBaseEntity
+class BaseEntity extends BaseKernelEntity
 {
     public function serialize(): mixed
     {

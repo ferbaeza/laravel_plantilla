@@ -4,7 +4,8 @@ namespace Src\Shared\Kernel\Exceptions;
 
 use RuntimeException;
 
-abstract class KernelBaseException extends RuntimeException
+
+abstract class BaseException extends RuntimeException
 {
     protected static $messages = [];
 

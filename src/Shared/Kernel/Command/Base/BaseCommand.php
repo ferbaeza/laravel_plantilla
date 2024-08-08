@@ -4,8 +4,7 @@ namespace Src\Shared\Kernel\Command\Base;
 
 use Src\Shared\Kernel\Base\BaseKernelEntity;
 
-
-class CustomBaseCommand extends BaseKernelEntity
+class BaseCommand extends BaseKernelEntity
 {
     public function __construct()
     {

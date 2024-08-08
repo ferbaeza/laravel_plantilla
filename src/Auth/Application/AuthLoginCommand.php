@@ -2,10 +2,10 @@
 
 namespace Src\Auth\Application;
 
-use Src\Shared\Kernel\Command\Base\CommandBase;
+use Src\Shared\Kernel\Command\Base\BaseCommand;
 
 
-final class AuthLoginCommand extends CommandBase
+final class AuthLoginCommand extends BaseCommand
 {
     public function __construct(
         public readonly string $identidad,

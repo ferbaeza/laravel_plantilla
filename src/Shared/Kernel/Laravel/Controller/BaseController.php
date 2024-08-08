@@ -3,12 +3,23 @@
 namespace Src\Shared\Kernel\Laravel\Controller;
 
 use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use Src\Shared\Kernel\Laravel\Traits\LoggerTrait;
+use Src\Shared\Kernel\ValueObjects\Main\ClassValue;
+use Src\Shared\Kernel\ValueObjects\Main\FechaValue;
 
-class BaseController extends CustomBaseController
+/** @phpstan-ignore-next-line */
+class BaseController extends Controller
 {
-    public function __construct(
-    ) {
-        parent::__construct();
+    use LoggerTrait;
+
+    protected ClassValue $id;
+    protected FechaValue $fecha;
+
+    public function __construct()
+    {
+        $this->id = ClassValue::create();
+        $this->fecha = FechaValue::create();
     }
 
     public const OK = 200;

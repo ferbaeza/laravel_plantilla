@@ -2,10 +2,10 @@
 
 namespace Src\Shared\Kernel\Exceptions\ValueObjects;
 
-use Src\Shared\Kernel\Exceptions\KernelBaseException;
+use Src\Shared\Kernel\Exceptions\BaseException;
 
 
-class ValueObjectException extends KernelBaseException
+class ValueObjectException extends BaseException
 {
     protected static $messages = [
         UuidException::class => UuidException::MESSAGE,

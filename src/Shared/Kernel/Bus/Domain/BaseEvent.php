@@ -2,14 +2,14 @@
 
 namespace Src\Shared\Kernel\Bus\Domain;
 
-use Src\Shared\Kernel\Command\Base\CommandBase;
+use Src\Shared\Kernel\Command\Base\BaseCommand;
 
 
 class BaseEvent
 {
-    private CommandBase $command;
+    private BaseCommand $command;
 
-    public function setCommand(CommandBase $command) //: BaseCommand
+    public function setCommand(BaseCommand $command) //: BaseCommand
     {
         $this->command = $command;
     }

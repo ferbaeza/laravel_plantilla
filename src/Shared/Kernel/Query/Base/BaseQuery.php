@@ -4,11 +4,11 @@ namespace Src\Shared\Kernel\Query\Base;
 
 use Src\Shared\Kernel\Base\BaseKernelEntity;
 
-class CustomBaseQuery extends BaseKernelEntity
+
+class BaseQuery extends BaseKernelEntity
 {
-    public function __construct(
-    ) {
+    public function __construct()
+    {
         parent::__construct();
     }
-
 }
