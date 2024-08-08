@@ -3,10 +3,8 @@
 namespace Src\Auth\Core\Laravel\Eloquent;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
-use Baezeta\Kernel\Utils\Primitivos\StringUtils;
-use Baezeta\Kernel\ValueObjects\Main\UuidValue;
+use Src\Shared\Kernel\ValueObjects\Main\UuidValue;
+use Src\Shared\Kernel\Utils\Primitivos\StringUtils;
 use Src\Shared\DAO\Usuario\Infrastructure\Eloquent\UsuarioModel;
 
 class UserSeeder extends Seeder

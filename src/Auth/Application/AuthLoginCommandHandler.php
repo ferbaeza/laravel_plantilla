@@ -3,8 +3,8 @@
 namespace Src\Auth\Application;
 
 use Src\Shared\Contrats\Response;
-use Baezeta\Kernel\Criteria\Criteria;
 use Src\Auth\Core\Service\LoginService;
+use Src\Shared\Kernel\Criteria\Criteria;
 use Src\Auth\Domain\Response\AuthUsuarioResponse;
 use Src\Auth\Domain\Exceptions\AuthLoginExcepption;
 use Src\Auth\Core\Ports\Driven\AuthEloquentDrivenInterface;

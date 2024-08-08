@@ -2,7 +2,8 @@
 
 namespace Src\Auth\Core\Ports\Driven;
 
-use Baezeta\Kernel\Criteria\Criteria;
+use Src\Shared\Kernel\Criteria\Criteria;
+
 
 interface AuthEloquentDrivenInterface
 {

@@ -2,7 +2,8 @@
 
 namespace Src\Auth\Application;
 
-use Baezeta\Kernel\Command\Base\CommandBase;
+use Src\Shared\Kernel\Command\Base\CommandBase;
+
 
 final class AuthLoginCommand extends CommandBase
 {

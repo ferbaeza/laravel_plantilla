@@ -2,7 +2,8 @@
 
 namespace Src\Shared\DAO\Usuario\Domain\Interfaces;
 
-use Baezeta\Kernel\Criteria\Criteria;
+use Src\Shared\Kernel\Criteria\Criteria;
+
 
 interface UsuarioEloquentRepositoryInterface
 {

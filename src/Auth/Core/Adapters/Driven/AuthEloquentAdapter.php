@@ -2,7 +2,7 @@
 
 namespace Src\Auth\Core\Adapters\Driven;
 
-use Baezeta\Kernel\Criteria\Criteria;
+use Src\Shared\Kernel\Criteria\Criteria;
 use Src\Auth\Core\Ports\Driven\AuthEloquentDrivenInterface;
 use Src\Shared\DAO\Usuario\Domain\Interfaces\UsuarioEloquentRepositoryInterface;
 

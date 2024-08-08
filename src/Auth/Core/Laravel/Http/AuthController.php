@@ -4,11 +4,10 @@ namespace Src\Auth\Core\Laravel\Http;
 
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
 use Src\Auth\Core\Ports\Driver\AuthDriverInterface;
-use Baezeta\Kernel\Laravel\Response\ApiResponse;
-use Baezeta\Kernel\Laravel\Controller\BaseController;
+use Src\Shared\Kernel\Laravel\Response\ApiResponse;
 use Src\Auth\Core\Laravel\Http\Requests\LoginRequest;
+use Src\Shared\Kernel\Laravel\Controller\BaseController;
 
 class AuthController extends BaseController
 {

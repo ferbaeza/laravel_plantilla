@@ -2,10 +2,10 @@
 
 namespace Src\Auth\Core\Laravel\Eloquent;
 
-use Baezeta\Kernel\ValueObjects\Main\UuidValue;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\WithFaker;
+use Src\Shared\Kernel\ValueObjects\Main\UuidValue;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory

@@ -3,7 +3,7 @@
 namespace Src\Auth\Core\Service;
 
 use Illuminate\Support\Facades\Auth;
-use Baezeta\Kernel\Utils\Primitivos\StringUtils;
+use Src\Shared\Kernel\Utils\Primitivos\StringUtils;
 
 class LoginService
 {

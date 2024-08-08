@@ -3,7 +3,7 @@
 namespace Src\Auth\Core\Laravel\Http;
 
 use Illuminate\Support\Facades\Route;
-use Baezeta\Kernel\Laravel\Routes\BaseRoutes;
+use Src\Shared\Kernel\Laravel\Routes\BaseRoutes;
 
 class AuthRoutes extends BaseRoutes
 {

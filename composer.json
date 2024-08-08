@@ -7,7 +7,6 @@
     "require": {
         "php": "^8.2",
         "baezeta/laravel-10-scaffold": "^1.1",
-        "baezeta/laravel-kernel": "^0.0.12",
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9"
@@ -21,6 +20,9 @@
         "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
+        "files": [
+            "src/Shared/Kernel/functions.php"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Src\\": "src/",

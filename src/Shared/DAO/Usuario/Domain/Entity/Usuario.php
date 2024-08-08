@@ -2,7 +2,8 @@
 
 namespace Src\Shared\DAO\Usuario\Domain\Entity;
 
-use Baezeta\Kernel\ValueObjects\Main\UuidValue;
+use Src\Shared\Kernel\ValueObjects\Main\UuidValue;
+
 
 class Usuario
 {

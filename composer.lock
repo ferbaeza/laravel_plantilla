@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5400376760ed4998808893cb3169c693",
+    "content-hash": "11874b599789f97200a84ec3893bb04e",
     "packages": [
         {
             "name": "baezeta/laravel-10-scaffold",
@@ -61,63 +61,6 @@
                 "source": "https://github.com/ferbaeza/Laravel-Context-Scaffolding/tree/v1.1.4"
             },
             "time": "2024-06-17T12:21:15+00:00"
-        },
-        {
-            "name": "baezeta/laravel-kernel",
-            "version": "v0.0.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ferbaeza/laravel-kernel.git",
-                "reference": "5d349b83d9259cd4cf61f960231dc86304b76a10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ferbaeza/laravel-kernel/zipball/5d349b83d9259cd4cf61f960231dc86304b76a10",
-                "reference": "5d349b83d9259cd4cf61f960231dc86304b76a10",
-                "shasum": ""
-            },
-            "require": {
-                "ramsey/uuid": "^4.7"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.57",
-                "illuminate/support": "^11.8",
-                "phpstan/phpstan": "^1.11",
-                "phpunit/phpunit": "^11.1",
-                "symfony/var-dumper": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Baezeta\\Kernel\\KernelServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Baezeta\\Kernel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fernando Baeza",
-                    "email": "fbaezahurato@gmail.com"
-                }
-            ],
-            "description": "Kernel Laravel para el uso de clases como Bus, Criteria, Entidades, Repositorios, Servicios, etc.",
-            "support": {
-                "issues": "https://github.com/ferbaeza/laravel-kernel/issues",
-                "source": "https://github.com/ferbaeza/laravel-kernel/tree/v0.0.12"
-            },
-            "time": "2024-07-20T12:18:44+00:00"
         },
         {
             "name": "brick/math",

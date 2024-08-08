@@ -3,7 +3,7 @@
 namespace Src\Auth\Domain\Response;
 
 use Src\Shared\Contrats\Response;
-use Baezeta\Kernel\ValueObjects\Main\UuidValue;
+use Src\Shared\Kernel\ValueObjects\Main\UuidValue;
 
 class LogoutResponse implements Response
 {

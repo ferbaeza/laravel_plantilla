@@ -4,9 +4,10 @@ namespace Src\Shared\DAO\Usuario\Infrastructure\Eloquent;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\WithFaker;
-use Baezeta\Kernel\ValueObjects\Main\UuidValue;
-use Baezeta\Kernel\Utils\Primitivos\StringUtils;
+use Src\Shared\Kernel\ValueObjects\Main\UuidValue;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Src\Shared\Kernel\Utils\Primitivos\StringUtils;
+use Src\Shared\DAO\Usuario\Infrastructure\Eloquent\UsuarioModel;
 
 class UserFactory extends Factory
 {

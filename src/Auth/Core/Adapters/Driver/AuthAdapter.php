@@ -6,9 +6,9 @@ use Src\Shared\Contrats\Response;
 use Illuminate\Support\Facades\Auth;
 use Src\Auth\Application\AuthLoginCommand;
 use Src\Auth\Domain\Response\LogoutResponse;
-use Baezeta\Kernel\ValueObjects\Main\UuidValue;
+use Src\Shared\Kernel\ValueObjects\Main\UuidValue;
 use Src\Auth\Core\Ports\Driver\AuthDriverInterface;
-use Baezeta\Kernel\Bus\Infrastructure\CommandBusFacade;
+use Src\Shared\Kernel\Bus\Infrastructure\CommandBusFacade;
 
 final class AuthAdapter implements AuthDriverInterface
 {

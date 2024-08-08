@@ -2,8 +2,8 @@
 
 namespace Src\Shared\DAO\Usuario\Domain\Factory;
 
-use Baezeta\Kernel\ValueObjects\Main\UuidValue;
 use Src\Shared\DAO\Usuario\Domain\DTO\UsuarioDTO;
+use Src\Shared\Kernel\ValueObjects\Main\UuidValue;
 
 
 class UsuarioFactory
