@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Shared\Kernel\Bus\Domain;
+namespace Src\Shared\Kernel\Bus\Domain\Entity;
 
 use Illuminate\Container\Container;
 

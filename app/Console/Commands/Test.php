@@ -30,7 +30,7 @@ class Test extends Command
     {
 
         $evnt = new TestEvent('Fer', 'm@mail.com');
-        TestJob::dispatch($evnt);
+        // TestJob::dispatch($evnt);
         event($evnt);
 
         return Command::SUCCESS;
